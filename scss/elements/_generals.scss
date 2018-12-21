@@ -1,0 +1,68 @@
+// ------------------------ generals --------------------------- //
+// --------------------------------------------------- //
+
+
+body{
+	background: $color-background;
+	@include font-body-texto-corrido;
+	overflow-x: hidden;
+}
+
+h1{
+	@include font-body-h-1;
+}
+
+h2{
+	
+}
+
+h3{
+	
+}
+
+h4{
+	
+}
+
+h5{
+	
+}
+
+h6{
+	
+}
+
+p{
+	@include font-body-texto-corrido ();
+	margin-bottom: 1rem;
+}
+
+blockquote{
+	margin-bottom: 1rem;
+	padding-left: 2rem;
+	position: relative;
+    
+	&:before{
+		position: absolute;
+		content: "";
+		left: 0;
+		top: 0;
+		width: 1px;
+		height: 30%;
+		background: $color-30;
+	}
+	
+	@media (max-width: $breakpoint_3){
+		padding-left: 1rem;
+	}
+    
+    p{
+	    @include font-quote ();
+    }
+}
+
+a{
+
+	@include links;
+	
+}

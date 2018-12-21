@@ -5,6 +5,10 @@ base theme: bootstrap
 name: 'Tema RAD'
 description: 'Tema RAD - Asociación Colombiana Red Académica de  Diseño '
 package: 'Bootstrap'
+
+libraries:
+  - tema_rad/global-styling
+  - tema_rad/global-scripts
   
 regions:
   top_header: 'Top Header'
@@ -34,6 +38,3 @@ regions:
   footer_fifth: 'Footer fifth'
   page_top: 'Page top'
   page_bottom: 'Page bottom'
-
-libraries:
-  - 'tema_rad/global-styling'

@@ -1,0 +1,85 @@
+// ------------------------ header --------------------------- //
+// --------------------------------------------------- //
+
+section{
+		
+	.region-top-header{
+		display: inline-block;
+	    float: right;
+	    z-index: 10;
+	    position: relative;
+	    //background: $color-blanco-rad;
+		
+		ul{
+		
+			li{
+				display: inline-block;
+				
+				a{
+					@include font-link-text;
+					font-family: avenir-medium;
+					font-size: 11px;
+					position: relative;
+					padding-left: 2rem;
+					
+					&:hover{
+						background: none;
+					}
+				}
+				
+				&:first-child{
+					
+					a{
+						color: $color-azul-rad;
+						border-right: 1px solid $color-grey;
+						//margin-right: 1rem;
+						
+						&:before{
+							position: absolute;
+							content: "";
+							background: url("../images/svg/oferta.svg");
+							background-repeat: no-repeat;
+							width: 14px;
+							height: 14px;
+							left: 6%;
+						}
+						
+					}
+					
+				}
+				
+				&:nth-child(2){
+					
+					a{
+						
+						&:before{
+							position: absolute;
+							content: "";
+							background: url("../images/svg/parte.svg");
+							background-repeat: no-repeat;
+							width: 14px;
+							height: 14px;
+							left: 6%;
+						}
+					}
+					
+				}
+				
+				&:last-child{
+					
+					a{
+						color: $color-blanco-rad;
+						background: $color-rojo-rad;
+						padding-left: 1rem;
+					}
+					
+				}
+				
+				
+			}
+			
+		}
+		
+	}
+	
+}

@@ -1,0 +1,56 @@
+// ------------------------ pages content --------------------------- //
+// --------------------------------------------------- //
+
+.page-node-type-page {
+	
+	.row{
+		
+		display: block;
+		background: $color-blanco-rad;
+		padding: 0 3.7rem 3rem;
+		position: relative;
+		//display: inline-block;
+		margin: 0;
+	    //grid-template-columns: 1fr 1fr 1fr 1fr;
+	    //grid-gap: 1rem;
+	
+		.col-sm-12{
+			max-width: 800px;
+		}
+		
+	}
+	
+	#second.row{
+		
+		.view-content{
+			
+			.views-row{
+				background: none;
+			}
+			
+		}
+		
+	}
+	
+}
+
+.node-168,
+.node-216,
+.node-158 {
+	
+	.row{
+		
+		//display: block;
+		background: none;
+		padding: initial;
+		position: relative;
+		margin: initial;
+		display: block;
+	
+		.col-sm-12{
+    
+		}
+		
+	}
+	
+}

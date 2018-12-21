@@ -1,0 +1,64 @@
+// ------------------------ breadcrumb --------------------------- //
+// --------------------------------------------------- //
+
+.region-breadcrumb{
+	background: $color-blanco-rad;
+	padding: 0;
+	border: 0;
+    border-radius: 0;
+    position: relative;
+    &::before,
+	&::after {
+	    content: "";
+	    background: url(../images/files/bg_patern.png);
+	    display: block;
+	    width: 100%;
+	    height: 100%;
+	    position: absolute;
+	    top: 0;
+	    left: 100%;
+	}
+	&::after {
+	    left: auto;
+	    right: 100%;
+	}
+	
+	.breadcrumb{
+		background: $color-blanco-rad;
+		margin-bottom: 0;
+		padding: 3rem 4.7rem 1rem;
+		
+		@media (max-width: $breakpoint_3){
+			padding: 2rem 2rem 1rem;
+		}
+		
+	}
+	
+}
+
+.page-node-type-asi-lo-vivimos,
+.page-node-type-page{
+	
+	.region-breadcrumb{
+	    &::before,
+			&::after {
+			    background: $color-background;
+			}
+	}
+	
+}
+
+.node-213,
+.node-214,
+.node-217,
+.node-213{
+	
+	.region-breadcrumb{
+	    &::before,
+		&::after {
+		    background: url(../images/files/bg_patern.png);
+		}
+		
+	}
+	
+}

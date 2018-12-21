@@ -1,0 +1,29 @@
+// ------------------------ menu etiquetas --------------------------- //
+// --------------------------------------------------- //
+
+.etiquetas-home{
+	
+	border: 1px solid red;
+	
+	ul{
+		
+		li{
+			
+			a{
+				display: table;
+				margin: .2rem 0;
+				color: $color-30;
+				background: $color-blanco-rad;
+				@include font-link-text;
+				
+				&:hover{
+					background: $color-blanco-rad;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}

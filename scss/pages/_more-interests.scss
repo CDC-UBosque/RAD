@@ -1,0 +1,116 @@
+// ------------------------ more interests --------------------------- //
+// --------------------------------------------------- //
+
+#second.row{
+	background: $color-background;
+	padding:  0;
+    box-sizing: border-box;
+    display: grid;
+    
+    &::before,
+	&::after {
+	    content: "";
+	    background: $color-background;
+	    display: block;
+	    width: 100%;
+	    height: 100%;
+	    position: absolute;
+	    top: 0;
+	    left: 100%;
+	}
+	&::after {
+	    left: auto;
+	    right: 100%;
+	}
+	
+	.col-sm-12{
+		max-width: initial;
+	}
+	
+	.region{
+		padding: 3rem 0;
+	}
+	
+	//
+	// header box
+	//
+	.view-header{
+		//display: grid;
+		//grid-template-columns: 1fr 1fr;
+		//grid-gap: 1rem;
+		margin-bottom: 2rem;
+		
+		@include font-title-section ();
+		
+		a{
+			text-align: right;
+			font-size: 13px;
+			line-height: 16px;
+			text-transform: initial;
+			letter-spacing: 0.5px;
+			float: right;
+			position: relative;
+			overflow: visible;
+			
+			&:before{
+				position: absolute;
+				content: "";
+				width: 4px;
+				height: 7px;
+				background: url(../images/svg/right.svg);
+				background-repeat: no-repeat;
+			    right: -0.4rem;
+			    top: 0.2rem;
+				border-radius: 100%;
+			}
+			
+			&:after{
+				opacity: 1;
+				width: 0%;
+				left: -80%;
+			}
+			
+			&:hover{
+				
+				&:after{
+					
+					opacity: 1;
+					width: 10%;
+					left: 108%;
+					
+				}
+				
+			}
+			
+			@media (max-width: $breakpoint_4){
+				//display: block;
+				float: none;
+				text-align: left;
+				margin-top: 1rem;
+			}
+			
+		}
+		
+	}
+	
+	//
+	// content box
+	//
+	.view-content{
+		//display: grid;
+		//grid-template-columns: 1fr 1fr 1fr 1fr;
+		//grid-gap: 1rem;
+		
+		.views-row{
+			padding: 1.5rem;
+			background: $color-blanco-rad;
+			position: relative;
+			display: inline-table;
+			
+			@include cards;
+			
+		}	
+		
+	}
+	
+}

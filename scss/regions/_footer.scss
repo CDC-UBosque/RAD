@@ -1,0 +1,173 @@
+// ------------------------ footer --------------------------- //
+// --------------------------------------------------- //
+
+footer.footer{
+	
+	margin: 0 auto;
+	border: 0px;
+	padding: 0 1rem;
+	
+	//
+	// top section - logos
+	// 
+	.site-footer__top{
+		background: $color-rojo-rad;
+		padding: 2rem 0;
+		position: relative;
+		display: grid;
+		grid-template-columns: 10% 1fr 10%;
+		grid-gap: 1rem;
+		grid-template-areas: 
+		    "left middle right";
+		&::before,
+		&::after {
+		    content: "";
+		    background: $color-rojo-rad;
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		    position: absolute;
+		    top: 0;
+		    left: 100%;
+		}
+		&::after {
+		    left: auto;
+		    right: 100%;
+		}
+		
+		@media (max-width: $breakpoint_3){
+			grid-template-columns: 1fr;
+			grid-gap: 1rem;
+			grid-template-areas: 
+			    "middle";
+		}
+		
+		.region-footer-fourth{
+			grid-area: middle;
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-gap: 1rem;
+			grid-template-areas: 
+			    "top"
+			    "middle"
+			    "bottom";
+			    
+			.footer-red{
+				grid-area: top;
+				justify-self: center;
+				
+				p{
+					color: $color-blanco-rad;	
+				}
+				
+			}
+			    
+			//
+			// social media
+			.footer-redes{
+				grid-area: middle;
+				grid-gap: 1rem;
+			    grid-template-columns: repeat(4, 1fr);
+			    display: grid;
+			    
+			    @media (max-width: $breakpoint_3){
+					grid-template-columns: 1fr;
+				}
+			    
+			    .field--name-body{
+				    grid-column: 3;
+				    
+				    @media (max-width: $breakpoint_3){
+						grid-column: 1;
+					}
+				
+			    }
+				
+				p{
+					color: $color-blanco-rad;	
+					font-size: 11px;
+					display: flex;
+					
+					a{
+						display: inline-block;
+					}
+					
+				}
+				
+			}
+			
+			//
+			// social media
+			.footer-afiliada-a{
+				grid-area: bottom;
+				
+				p{
+					color: $color-blanco-rad;	
+					font-size: 13px;
+				}
+				
+				//
+				// title
+				.field--name-body{
+					
+				}
+				
+				//
+				// image
+				.field--name-field-imagen{
+					display: grid;
+					grid-template-columns: repeat(4, 1fr);
+					grid-gap: 1rem;
+					
+					@media (max-width: $breakpoint_3){
+						grid-template-columns: repeat(2, 1fr);
+					}
+					
+					@media (max-width: $breakpoint_4){
+						grid-template-columns: 1fr;
+					}
+					    
+					    .field--item{
+						    justify-self: center;
+					    }
+					    
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	//
+	// bottom section - logos
+	// 
+	.site-footer__bottom{
+		background: $color-blanco-rad;
+		padding: 1rem 0;
+		position: relative;
+		display: grid;
+		&::before,
+		&::after {
+		    content: "";
+		    background: $color-blanco-rad;
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		    position: absolute;
+		    top: 0;
+		    left: 100%;
+		}
+		&::after {
+		    left: auto;
+		    right: 100%;
+		}
+		
+		p{
+			text-align: center;
+			font-size: 13px;
+		}
+		
+	}
+	
+}

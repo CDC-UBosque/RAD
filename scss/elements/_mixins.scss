@@ -1,0 +1,72 @@
+@mixin cards{
+	.views-field-field-imagen-principal-del-event,
+	.views-field-field-imagenes-de-asi-lo-vivimos{
+		margin: -1.5rem -1.5rem 0;
+	}
+	
+	.views-field-field-catego{
+		margin: 1rem 0 .5rem;
+		
+		.contextual-region{
+			position: initial;
+		}
+		
+		.field--name-name-text{
+			@include font-block-complementario-s ();
+			box-shadow: none;
+		}
+		
+		// punto
+		.field--name-field-punto-imagen{
+			position: absolute;
+			top: 1rem;
+			left: 1rem;
+		}
+		
+	}
+	
+	.views-field-title{
+		
+		.field-content{
+			@include font-title-grid ();
+			a{
+				color: $color-100;
+			}
+		}
+		
+	}
+}
+
+@mixin links{
+	
+	color: $color-rojo-rad;
+	position: relative;
+	transition: all .1s ease-in-out;
+	text-decoration: none;
+	overflow: hidden;
+	display: inline-block;
+	
+	&:after{
+		position: absolute;
+		content: "";
+		background: $color-rojo-rad;
+		width: 70%;
+		left: -100%;
+		top: 50%;
+		height: 2px;
+		transition: all .5s ease-in-out;
+	}
+	
+	&:hover{
+		
+		text-decoration: none;
+		color: $color-rojo-rad;
+		
+		&:after{
+		    width: 70%;
+		    left: 100%;
+		}
+		
+	}
+	
+}

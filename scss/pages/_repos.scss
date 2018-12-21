@@ -1,0 +1,179 @@
+// ------------------------ pages repositorios --------------------------- //
+// --------------------------------------------------- //
+
+.region.region-content{
+	
+	article[role="article"]{
+		.field--name-title-text{
+			display: none;
+		}
+	}
+	
+	section[ class*="block-views-blockrepositorios-block-"],
+	section[ class*="block-views-blockrepositorios-por-etiqueta-block-"],
+	section[ class*="block-views-blockcalendario-block-"]{
+		//background: red;
+		
+		.view-content{
+			
+			.views-row{
+				background-color: $color-blanco-rad;
+				display: inline-block;
+				width: 33%;
+				border: 1px solid $color-grey-borders;
+				position: relative;
+				padding: 1.5rem;
+				
+				@include cards;
+				
+			}
+	    
+		}
+		
+	}
+	
+	section.bloque-agenda-principal{
+		
+		.view-content{
+			
+			.views-row{
+				background-color: $color-blanco-rad;
+				//margin: 0 0 1.5rem;
+				width: 100%;
+				border: 1px solid $color-grey-borders;
+				position: relative;
+				padding: 0;
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-column-gap: 1rem;
+				align-items: center;
+				grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+				//grid-template-areas:
+				//	"top1 top2 top3"
+				//	"middle1 middle2 middle3"
+				//	"bottom1 bottom2 bottom3";
+				
+				@include cards;
+				
+				
+				//
+				// image
+				.views-field-field-imagen-principal-del-event{
+					grid-column-start: 1;
+					grid-column-end: 1;
+					grid-row-start: 1;
+					grid-row-end: 6;
+				    margin: 0;
+					justify-self: stretch;
+					
+					a{
+						display: -webkit-box;
+						display: -webkit-flex;
+						display: -ms-flexbox;
+						display: flex;
+						
+						img{
+							
+						}
+						
+					}
+					
+				}
+				
+				//
+				// 
+				.views-field-field-catego{
+					grid-column-start: 2;
+					grid-column-end: 4;
+					grid-row-start: 1;
+					grid-row-end: 1;
+					margin: 0;
+					
+					.field-content{
+						@include font-block-complementario-m ();
+					}
+					
+				}
+				
+				.views-field-title{
+					grid-column-start: 2;
+					grid-column-end: 4;
+					grid-row-start: 2;
+					grid-row-end: 2;
+					
+					a{
+						@include font-body-h-1 ();
+					}
+					
+				}
+				
+				.views-field-field-fecha-de-inicio{
+					grid-column-start: 2;
+					grid-column-end: 2;
+					grid-row-start: 3;
+					grid-row-end: 3;
+					
+					span{
+						@include font-small-pretitle ();
+						font-weight: initial;
+						color: $color-50;
+					}
+					
+					.field-content{
+						@include font-title-grid ();
+					}
+					
+				}
+				
+				.views-field-field-fecha-de-finalizacion{
+					grid-column-start: 2;
+					grid-column-end: 2;
+					grid-row-start: 4;
+					grid-row-end: 4;
+					
+					span{
+						@include font-small-pretitle ();
+						font-weight: initial;
+						color: $color-50;
+					}
+					
+					.field-content{
+						@include font-title-grid ();
+					}
+					
+				}
+				
+				.views-field-field-lugar{
+					grid-column-start: 3;
+					grid-column-end: 3;
+					grid-row-start: 3;
+					grid-row-end: 3;
+					border-left: 1px solid $color-grey-borders;
+					padding-left: 1rem;
+					
+					span{
+						@include font-small-pretitle ();
+						font-weight: initial;
+						color: $color-50;
+					}
+					
+					.field-content{
+						@include font-title-grid ();
+					}
+					
+				}
+				
+				.views-field-field-destacado{
+					grid-column-start: 2;
+					grid-column-end: 4;
+					grid-row-start: 5;
+					grid-row-end: 5;
+				}
+				
+			}
+	    
+		}
+		
+	}
+	
+}

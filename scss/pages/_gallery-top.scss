@@ -1,0 +1,136 @@
+// ------------------------ banner pages --------------------------- //
+// --------------------------------------------------- //
+
+.page-node-type-asi-lo-vivimos{
+	
+	.region-featured-top{
+	
+		.views-row{
+			position: relative;
+			
+			.views-field-field-imagenes-de-asi-lo-vivimos{
+				
+				.field-content{
+					
+					display: grid;
+					grid-template-columns: 10% 1fr 1fr 10% 1fr;
+					grid-template-rows: repeat(3, 97px);
+					justify-items: stretch;
+					align-items: stretch;
+					
+					@media (max-width: $breakpoint_1){
+						grid-template-rows: repeat(3, 78px);
+					}
+					
+					@media (max-width: $breakpoint_2){
+						grid-template-rows: repeat(3, 60px);
+					}
+					
+					@media (max-width: $breakpoint_3){
+						grid-template-rows: 1fr;
+						grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+					}
+					
+					@media (max-width: $breakpoint_4){
+						grid-template-columns: 1fr 1fr 1fr;
+					}
+					
+					
+					a{
+						
+						&:nth-child(1){
+							grid-column-start: 1;
+							grid-column-end: 1;
+							grid-row-start: 1;
+							grid-row-end: 1;
+						}
+						
+						&:nth-child(2){
+							grid-column-start: 1;
+							grid-column-end: 1;
+							grid-row-start: 2;
+							grid-row-end: 2;
+						}
+						
+						&:nth-child(3){
+							grid-column-start: 1;
+							grid-column-end: 1;
+							grid-row-start: 3;
+							grid-row-end: end;
+						}
+						
+						&:nth-child(4){
+							grid-column-start: 2;
+							grid-column-end: 2;
+							grid-row-start: 1;
+							grid-row-end: end;
+						}
+						
+						&:nth-child(5){
+							grid-column-start: 3;
+							grid-column-end: 3;
+							grid-row-start: 1;
+							grid-row-end: end;
+						}
+						
+						&:nth-child(6){
+							grid-column-start: 4;
+							grid-column-end: 4;
+							grid-row-start: 1;
+							grid-row-end: 1;
+						}
+						
+						&:nth-child(7){
+							grid-column-start: 4;
+							grid-column-end: 4;
+							grid-row-start: 2;
+							grid-row-end: 2;
+						}
+						
+						&:nth-child(8){
+							grid-column-start: 4;
+							grid-column-end: 4;
+							grid-row-start: 3;
+							grid-row-end: end;
+						}
+						
+						&:nth-child(9){
+							grid-column-start: 5;
+							grid-column-end: 5;
+							grid-row-start: 1;
+							grid-row-end: end;
+						}
+						
+						&:nth-child(n+1){
+							
+							@media (max-width: $breakpoint_3){
+								grid-column-start: initial;
+								grid-column-end: initial;
+								grid-row-start: initial;
+								grid-row-end: initial;
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+			.views-field-field-catego{
+				position: absolute;
+				right: 0;
+				top: 2rem;
+				display: table;
+				padding: 0.5rem 1rem;
+				color: $color-30;
+				background: $color-blanco-rad;
+				@include font-link-text;
+			}
+			
+		}
+		
+	}
+	
+}

@@ -1,6 +1,21 @@
+#global-styling:
+#	css:
+#		theme:
+#			css/style.css: {}
+#      
+#global-scripts:
+#	js:
+#		js/custom.js: {}
+
 global-styling:
+  version: 1.x
   css:
     theme:
       css/style.css: {}
-      
-
+global-scripts:
+  version: 1.x
+  js: 
+    js/masonry/macy.js: {}
+    js/masonry/repos.js: {}
+    js/masonry/interest.js: {}
+    js/menu/menu-slide.js: {}

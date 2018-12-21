@@ -1,0 +1,26 @@
+// ------------------------ banner pages --------------------------- //
+// --------------------------------------------------- //
+
+.region-featured-top{
+	
+	.views-row{
+		position: relative;
+	}
+	
+	.views-field-field-etiqueta{
+		position: absolute;
+		right: 0;
+		top: 2rem;
+		display: table;
+		padding: 0.5rem 1rem;
+		color: $color-30;
+		background: $color-blanco-rad;
+		@include font-link-text;
+		
+		@media (max-width: $breakpoint_4){
+			top: 0;
+		}
+		
+	}
+	
+}

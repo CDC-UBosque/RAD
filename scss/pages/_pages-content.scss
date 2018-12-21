@@ -1,0 +1,316 @@
+// ------------------------ pages content --------------------------- //
+// --------------------------------------------------- //
+
+.page-node-type-concurso,
+.page-node-type-asi-lo-vivimos,
+.page-node-type-actividad,
+.page-node-type-beca,
+.page-node-type-convocatoria,
+.page-node-type-editorial,
+.page-node-type-evento,
+.page-node-type-proyecto {
+	
+	.row{
+		
+		background: $color-blanco-rad;
+		padding: 0 3rem 3rem;
+		position: relative;
+		display: inline-block;
+		margin: 0;
+
+		&::before,
+		&::after {
+		    content: "";
+		    background: url(../images/files/bg_patern.png);
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		    position: absolute;
+		    top: 0;
+		    left: 100%;
+		}
+		&::after {
+		    left: auto;
+		    right: 100%;
+		}
+		
+		@media (max-width: $breakpoint_3){
+			padding: 0 0 1rem;
+		}
+		
+		@media (max-width: $breakpoint_4){
+			display: block;
+		}
+		
+		.region-content{
+		
+			.content{
+				
+				>div{
+					
+					>div{
+						margin-bottom: 1rem;
+						word-break: break-word;
+					}
+					
+					//
+					//
+					// Seccion izquierda
+					//
+					//
+					
+					//
+					// DOTS SECTION
+					
+					.field--name-field-catego{
+						//padding-left: 1.5rem;
+						@include font-block-complementario-m ();
+						
+						.layout__region{
+							
+							>div {
+								display: inline-block;
+								box-shadow: none;
+							}
+							
+						}
+						
+					}
+					
+					/*.punto-concurso{
+						position: relative;
+						
+						&:before{
+							position: absolute;
+							content: "";
+							width: 15px;
+							height: 15px;
+							background: $color-azul-rad;
+							left: 0;
+							border-radius: 100%;
+						}
+						
+					}*/
+					
+					// fechas inicio
+					// fechas fin
+					.field--name-field-fecha-de-inicio,
+					.field--name-field-fecha-de-finalizacion,
+					.field--name-field-lugar{
+						
+						.field--label{
+							@include font-small-pretitle ();
+							font-weight: initial;
+							color: $color-50;
+						}
+						
+						.field--item{
+							@include font-title-compl ();
+						}
+						
+					}
+					
+					// title
+					.field--name-title-text{
+						@include font-title ();
+						box-shadow: none;
+						margin-bottom: 2rem;
+						display: block;
+					}
+					
+					// lugar
+					.field--name-field-lugar{
+						margin-bottom: 0;
+					}
+					
+					// ciudad
+					.field--name-field-ciudad{
+						@include font-small-pretitle ();
+						font-weight: initial;
+						color: $color-50;
+					}
+					
+					// participantes
+					.field--name-field-participantes{
+						
+						position: relative;
+						
+						&:after{
+							position: absolute;
+							content: "";
+							background: $color-50;
+						    width: 30%;
+						    left: 0;
+						    bottom: -25%;
+							height: 1px;
+						}
+						
+						.field--label{
+							@include font-small-pretitle ();
+							font-weight: initial;
+							color: $color-50;
+						}
+						
+						.field--item{
+							@include font-small-pretitle ();
+						}
+						
+					}
+					
+					// pdf
+					.field--name-field-descargar-memorias-pdf{
+						
+						.field--label{
+							display: none;	
+						}
+						
+						.field--item{
+							
+							span{
+								
+								.file-icon{
+									display: none;
+								}
+								
+								.file-link{
+									border: 0px;
+									background: none;
+									
+									a{
+										@include links;
+										font-size: 16px;
+										font-weight: initial;
+									}
+									
+								}
+								
+								.file-size{
+									display: none;
+								}
+								
+							}
+							
+						}
+						
+					}
+					
+					//
+					//
+					// Seccion derecha
+					//
+					//
+					.field--name-field-destacado{
+						@include font-body-destacado ();
+					}
+					
+					.field--name-field-patrocinadores{
+						
+						.field--label{
+							@include font-small-pretitle ();
+							font-weight: initial;
+							color: $color-50;
+						}
+						
+						.field--items{
+							display: grid;
+							grid-template-columns: 1fr 1fr 1fr;
+							grid-gap: 1rem;
+							justify-items: center;
+							align-items: center;
+							
+							@media (max-width: $breakpoint_2){
+								grid-template-columns: 1fr 1fr 1fr 1fr;
+							}
+							
+							@media (max-width: $breakpoint_4){
+								grid-template-columns: 1fr 1fr;
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+
+.page-node-type-asi-lo-vivimos	{
+	
+	.row{
+
+		&::before,
+		&::after {
+		    content: "";
+		    background: $color-background;
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		    position: absolute;
+		    top: 0;
+		    left: 100%;
+		}
+		&::after {
+		    left: auto;
+		    right: 100%;
+		}
+		
+		.field--name-field-catego{
+			
+			.layout__region{
+				
+				>div {
+					box-shadow: none;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+
+.node-213,
+.node-214,
+.node-217,
+.node-213 {
+	
+	.row{
+
+		&::before,
+		&::after {
+		    content: "";
+		    background: url(../images/files/bg_patern.png);
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		    position: absolute;
+		    top: 0;
+		    left: 100%;
+		}
+		&::after {
+		    left: auto;
+		    right: 100%;
+		}
+		
+		.field--name-field-catego{
+			
+			.layout__region{
+				
+				>div {
+					box-shadow: none;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
