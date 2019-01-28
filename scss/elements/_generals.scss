@@ -1,45 +1,67 @@
 // ------------------------ generals --------------------------- //
 // --------------------------------------------------- //
 
+html {
+	@media (pointer:coarse){
+		overflow-x: hidden;
+	}
+}
 
 body{
+	position: relative;
 	background: $color-background;
-	@include font-body-texto-corrido;
+	font-weight: unset;
 	overflow-x: hidden;
+	@include font-body-texto-corrido;
+	@media (pointer:coarse){
+		overflow-x: hidden;
+	}
 }
 
 h1{
+	font-weight: unset;
 	@include font-body-h-1;
 }
 
 h2{
-	
+	font-weight: unset;
+	@include font-body-h-1;
+	margin-bottom: 1rem;
 }
 
 h3{
-	
+	font-weight: unset;
+	@include font-body-h-1;
+	margin-bottom: 1rem;
 }
 
 h4{
-	
+	font-weight: unset;
+	@include font-body-destacado ();
+	margin-bottom: 1rem;
 }
 
 h5{
-	
+	font-weight: unset;
+	@include font-body-destacado ();
+	margin-bottom: 1rem;
 }
 
 h6{
-	
+	font-weight: unset;
+	@include font-body-destacado ();
+	margin-bottom: 1rem;
 }
 
 p{
+	font-weight: unset;
 	@include font-body-texto-corrido ();
 	margin-bottom: 1rem;
 }
 
 blockquote{
 	margin-bottom: 1rem;
-	padding-left: 2rem;
+	padding-left: 4rem;
 	position: relative;
     
 	&:before{
@@ -53,6 +75,10 @@ blockquote{
 	}
 	
 	@media (max-width: $breakpoint_3){
+		padding-left: 2rem;
+	}
+	
+	@media (max-width: $breakpoint_4){
 		padding-left: 1rem;
 	}
     
@@ -62,7 +88,115 @@ blockquote{
 }
 
 a{
-
+	font-weight: unset;
 	@include links;
+	
+	img{
+		transition: all .2s ease-in-out;
+		
+		&:hover{
+			transform: scale(0.9);
+		}
+	}
+
+}
+
+ul{
+	list-style-type: disc;
+	padding-left: 1rem;
+	
+	li{
+		margin-bottom: 1rem;
+	}
+	
+}
+
+ol{
+	list-style-type: upper-alpha;
+	padding-left: 1rem;
+	
+	li{
+		margin-bottom: 1rem;
+	}
+	
+}
+
+p{
+	
+	a{
+		font-size: inherit;
+	    line-height: inherit;
+	    //display: inline-table;
+	    
+	    display: initial;
+			
+			&:after{
+				width: 20%;
+				left: 0%;
+				visibility: hidden;
+			}
+			
+			&:hover{
+				
+				&:after{
+				    width: 0%;
+				    left: 100%;
+				    visibility: visible;
+				}
+				
+			}
+	    
+	    //@-moz-document url-prefix() {
+		//}
+		
+	}
+	
+}
+
+//
+// btn
+.btn-primary,
+.more-link,
+.button-red{
+	@include btn-primary;
+}
+
+time{
+	@include font-block-complementario-m ();
+}
+
+.main-container{
+	margin: 2rem auto;
+}
+
+span.file{
+	
+	span{
+		border-color: $color-grey-borders;
+		color: $color-rojo-rad;
+		
+		&:first-child{
+			border-color: $color-grey-borders;
+		}
+		
+		&:last-child{
+			border-color: $color-grey-borders;
+		}
+		
+		.text-primary {
+		    color: $color-rojo-rad;
+		}
+		
+		a{
+			color: $color-rojo-rad;
+			//margin-top: 0.4rem;
+			
+			&:hover{
+				color: $color-rojo-rad;
+			}
+			
+		}
+		
+	}
 	
 }

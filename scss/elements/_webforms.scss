@@ -1,0 +1,273 @@
+// ------------------------ webforms --------------------------- //
+// --------------------------------------------------- //
+
+form,
+.webform-submission-form,
+.views-exposed-form{
+	
+	.form-group{
+		
+		.btn{
+			    width: 100%;
+		}
+		
+	}
+	
+	.panel-default{
+		border: 0px;
+	    background: none;
+	    border-radius: 0px;
+	    box-shadow: none;
+	
+		.panel-heading{
+			background: none;
+			border: 0px;
+			padding: 1rem 0 0;
+			
+			.panel-title{
+				@include font-body-destacado ();
+			}
+			
+		}
+		
+		.panel-body{
+			padding: 1rem 0;
+			
+			.form-group{
+				margin-bottom: 0.5rem;
+				
+				label{
+					display: none;
+				}
+				
+				input{
+					width: 100%;
+				}
+				
+			}
+			
+			//
+			// checkbox
+			.radio,
+			.checkbox{
+				
+				input[type="checkbox"]{
+					border-radius: 0px;
+					width: auto;
+				}
+				
+				label{
+					@include font-block-complementario-s ();
+					text-transform: initial;
+				    letter-spacing: 0;
+				    line-height: 15px;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	//label
+	.form-required{
+		display: none;
+	}
+	
+	.form-type-checkbox{
+		.form-required{
+			display: block;
+			padding: 0 1rem;
+		}
+	}
+	
+	input{
+		border-radius: 0px;
+		@include font-link-text ();
+		letter-spacing: 1px;
+		text-transform: initial;
+		width: 100%;
+		color: $color-50;
+	}
+	
+	//
+	// select dropper
+	.select-wrapper{
+		
+		&:after{
+			color: $color-50;
+			font-size: small;
+			background: url(../images/svg/icon/down-form.svg);
+			content: "";
+			width: 9px;
+			height: 5px;
+			right: 3%;
+		}
+		
+		select{
+			border-radius: 0px;
+			@include font-link-text ();
+			letter-spacing: 1px;
+			text-transform: initial;
+			box-shadow: none;
+			color: $color-50;
+			
+		}
+		
+	}
+	
+	//
+	// file upload				
+	.form-managed-file{
+		@include display-grid;
+		@include grid-parent-2-columns (1fr, 1fr);
+		grid-gap: 1rem;
+		
+		@media (max-width: $breakpoint_4){
+			@include grid-parent-1-columns (1fr) ;
+		}
+		
+		input[type="file"]{
+			visibility: hidden;
+			position: relative;
+			@include grid-child-column(1, 2);
+			@include grid-child-row (1, 1);
+			
+			//
+			// --- resets microsoft edge ------
+			@include resets-edge-ie (visibility, visible);
+			
+			&:after{
+				content: "";
+			    background: url(../images/svg/icon/btn-archive.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0%;
+				visibility: visible;
+				
+				@media (max-width: $breakpoint_1){
+					top: 0;
+					left: 0%;
+				}
+				
+				@media (max-width: $breakpoint_2){
+					top: 20%;
+					left: 0%;
+				}
+				
+				@media (max-width: $breakpoint_3){
+					top: 0;
+					left: 0%;
+				}
+				
+				@media (max-width: $breakpoint_4){
+					top: 0;
+					left: 0%;
+				}
+				
+			}
+			
+			&:hover{
+				
+				&:after{
+					background: url(../images/svg/icon/btn-archive-2.svg);
+					background-size: contain;
+					background-repeat: no-repeat;
+				}
+				
+			}
+			
+		}
+		
+		button{
+			display: block;
+			background: $color-grey-button;
+			border: 0px;
+			@include font-block-complementario-s ();
+			text-align: center;
+			border-radius: 0px;
+			letter-spacing: 0;
+			width: 100%;
+			@include grid-child-column(2, 3);
+			@include grid-child-row (1, 1);
+			
+			@media (max-width: $breakpoint_4){
+				@include grid-child-column(1, 2);
+				@include grid-child-row (2, 2);
+			}
+			
+			@media (max-width: $breakpoint_2){
+				word-break: break-all;
+				-ms-word-break: break-all;
+				word-break: break-all;
+				word-break: break-word;
+				-webkit-hyphens: auto;
+				-moz-hyphens: auto;
+				hyphens: auto;
+				white-space: pre-wrap;
+				padding-bottom: 18px;
+				line-height: 15px;
+			}
+			
+			@media (max-width: $breakpoint_3){
+				word-break: initial;
+				-ms-word-break: initial;
+				word-break: initial;
+				word-break: initial;
+				-webkit-hyphens: initial;
+				-moz-hyphens: initial;
+				hyphens: initial;
+				white-space: initial;
+				padding-bottom: initial;
+				line-height: initial;
+				padding: 6px 12px;
+			}
+			
+			&:hover{
+				background: $color-grey;
+			}
+			
+			span{
+				display: none;
+			}
+			
+		}
+		
+		.file{
+			
+			>span{
+				color: $color-rojo-rad;
+				border-color: $color-grey-borders;	
+			}
+			
+		}
+		
+	}
+	
+	div[data-drupal-selector="edit-adjuntos"]{
+		
+		.panel-body{
+			
+			.form-group{
+				
+				label{
+					display: block;
+					margin-bottom: .5rem;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+
+.webform-registre-evento{
+	max-width: 550px;
+}

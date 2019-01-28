@@ -6,9 +6,18 @@ section{
 	.region-top-header{
 		display: inline-block;
 	    float: right;
-	    z-index: 10;
-	    position: relative;
-	    //background: $color-blanco-rad;
+	    z-index: 101;
+		position: absolute;
+		right: 0;
+		
+		@media (max-width: $breakpoint_2){
+			position: relative;
+		}
+		
+		@media (max-width: $breakpoint_3){
+			position: absolute;
+			top: 0.7rem;
+		}
 		
 		ul{
 		
@@ -28,6 +37,10 @@ section{
 				}
 				
 				&:first-child{
+					
+					@media (max-width: 570px){
+						display: none;
+					}
 					
 					a{
 						color: $color-azul-rad;
@@ -49,6 +62,10 @@ section{
 				}
 				
 				&:nth-child(2){
+					
+					@media (max-width: 570px){
+						display: none;
+					}
 					
 					a{
 						

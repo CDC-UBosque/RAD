@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="16px" viewBox="0 0 9 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>Previous</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Agenda" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Imac-Calendario" transform="translate(-863.000000, -233.000000)" fill="#2F3786">
+            <g id="Body" transform="translate(365.000000, 209.000000)">
+                <g id="Calendar">
+                    <g id="Topbar">
+                        <g id="Month-picker" transform="translate(498.333333, 22.666667)">
+                            <path d="M4.16664857,13.2424242 C3.92996223,13.2424242 3.7037235,13.1499456 3.53665079,12.9855366 L-3.1480398,6.40584655 C-3.49610795,6.06333703 -3.49610795,5.50846065 -3.1480398,5.16597305 C-2.79997165,4.82348545 -2.23522133,4.82346353 -1.88804423,5.16597305 L4.16667084,11.1248715 L10.2213859,5.16597305 C10.5694541,4.82346353 11.1333356,4.82346353 11.4813815,5.16597305 C11.8294274,5.50848257 11.8294496,6.06335895 11.4813815,6.40584655 L4.79758196,12.9855366 C4.62963824,13.1499412 4.40340174,13.2424242 4.1667154,13.2424242 L4.16664857,13.2424242 Z" id="Previous" transform="translate(4.166667, 9.075758) rotate(-270.000000) translate(-4.166667, -9.075758) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

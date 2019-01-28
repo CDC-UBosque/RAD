@@ -5,7 +5,8 @@
 	background: $color-background;
 	padding:  0;
     box-sizing: border-box;
-    display: grid;
+    //@include display-grid;
+    display: block;
     
     &::before,
 	&::after {
@@ -28,17 +29,15 @@
 	}
 	
 	.region{
-		padding: 3rem 0;
+		padding: 3rem 0 0;
 	}
 	
 	//
 	// header box
 	//
 	.view-header{
-		//display: grid;
-		//grid-template-columns: 1fr 1fr;
-		//grid-gap: 1rem;
 		margin-bottom: 2rem;
+		max-width: initial;
 		
 		@include font-title-section ();
 		
@@ -53,15 +52,9 @@
 			overflow: visible;
 			
 			&:before{
-				position: absolute;
-				content: "";
-				width: 4px;
-				height: 7px;
-				background: url(../images/svg/right.svg);
-				background-repeat: no-repeat;
+				@include right-arrow;
 			    right: -0.4rem;
 			    top: 0.2rem;
-				border-radius: 100%;
 			}
 			
 			&:after{
@@ -83,7 +76,6 @@
 			}
 			
 			@media (max-width: $breakpoint_4){
-				//display: block;
 				float: none;
 				text-align: left;
 				margin-top: 1rem;
@@ -97,19 +89,84 @@
 	// content box
 	//
 	.view-content{
-		//display: grid;
-		//grid-template-columns: 1fr 1fr 1fr 1fr;
-		//grid-gap: 1rem;
 		
 		.views-row{
 			padding: 1.5rem;
 			background: $color-blanco-rad;
 			position: relative;
 			display: inline-table;
+			margin-bottom: 1rem;
+			width: calc(25% - 15px);
+				
+			@media (max-width: $breakpoint_3){
+				width: calc(50% - 15px);
+			}
+			
+			@media (max-width: $breakpoint_4){
+				width: 100%;
+			}
 			
 			@include cards;
 			
+			.views-field-field-imagen-principal-del-event,
+			.views-field-field-imagenes-de-asi-lo-vivimos{
+				.field-content{
+					height: initial !important;
+				}
+			}
+			
+			.views-field-field-catego{
+				margin-top: 1rem;
+			}
+			
 		}	
+		
+	}
+	
+	
+	//
+	// Block withouth iamges
+	//
+	.bloque-contenido-relacionado-all{
+		
+		.views-row{
+			border-right: 1px solid $color-grey-borders;
+			
+			&:last-child{
+				border-right: 0;
+			}
+			
+			@media (max-width: $breakpoint_3){
+				
+				&:nth-child(even){
+					border-right: 0;
+				}
+				
+			}
+			
+			@media (max-width: $breakpoint_4){
+				
+				border-right: 0;
+				
+			}
+			
+			.views-field-field-catego{
+				margin: 0rem 0 1rem;
+				
+				.field--name-field-punto-imagen{
+					position: relative;
+					top: 0.1rem;
+					left: initial;
+					display: inline-block;
+				}
+				
+				.field--name-name-text{
+					margin-top: 0;
+				}
+				
+			}
+			
+		}
 		
 	}
 	

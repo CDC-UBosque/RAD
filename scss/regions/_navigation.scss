@@ -5,7 +5,7 @@
 	background: $color-blanco-rad;
 	padding:  1rem 0;
     position: relative;
-	//display: grid;
+	//@include display-grid;
     
     &::before,
 	&::after {
@@ -29,12 +29,16 @@
 			
 			a{
 				
-				@include links;
+				//@include links;
+				@include font-block-title-m ();
 				border: 0px;
 				border-radius: 0;
+				background: none;
+				color: $color-30;
 				
 				&:hover{
-					background: $color-blanco-rad;
+					//background: $color-blanco-rad;
+					color: $color-rojo-rad;
 				}
 				
 			}
@@ -47,15 +51,79 @@
 			
 			a{
 				
-				@include links;
+				@include font-block-title-m ();
 				border: 0px;
 				border-radius: 0;
-				background: $color-rojo-rad;
-				color: $color-blanco-rad;
+				//background: $color-rojo-rad;
+				color: $color-rojo-rad;
 				
-				&:hover{
-					background: $color-blanco-rad;
-					color: $color-rojo-rad;
+				&:after{
+					display: none;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+
+.node-168,
+.node-216,
+.node-158,
+.node-148,
+.node-157,
+.node-150,
+.node-149,
+.node-152,
+.node-156,
+.node-121,
+.node-153,
+.node-159,
+.node-160,
+.node-161,
+.node-162,
+.node-163,
+.node-164,
+.node-165,
+.node-166,
+.node-167,
+.node-226,
+.node-236{
+	
+	.pager-nav{
+		
+		background: none;
+    
+	    &::before,
+		&::after {
+		    display: none
+		}
+		
+		.pagination{
+		
+			.pager__item{
+				
+				a{
+					
+					&:hover{
+						background: none;
+					}
+					
+				}
+				
+			}
+			
+			.is-active,
+			.active{
+				
+				a{
+					
+					&:hover{
+						background: $color-blanco-rad;
+					}
+					
 				}
 				
 			}

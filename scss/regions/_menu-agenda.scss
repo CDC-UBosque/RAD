@@ -3,9 +3,106 @@
 
 aside{
 	
-	.bloque-agenda-pagina{
+	.bloque-agenda-pagina,
+	.bloque-asi-lo-vivimos-agenda{
+		
+		.view-calendario{
+			
+			.view-header{
+				margin-bottom: 1rem;
+			}
+			
+			.view-content{
+				
+				.views-row{
+					
+					margin-bottom: 1rem;
+					
+					.views-field{
+						margin-bottom: 0.5rem;
+					}
+					
+				}
+				
+			}
+			
+			.view-footer{
+				
+				a{
+					@include btn-primary-yellow;
+					width: 100%;
+					text-align: left;
+					padding: 1rem;
+					margin-top: 1rem;
+				}
+				
+			}
+			
+		}
 		
 		.view-content{
+			
+			.views-row{
+				
+				.views-field{
+					margin-bottom: 1rem;
+					&:last-child{
+						margin-bottom: 0;
+					}
+				}
+				
+				.views-field-field-catego{
+					
+					.field--name-field-punto-imagen{
+						display: inline-block;
+					}
+					
+					.field--name-name-text{
+						display: inline-block;
+					}
+					
+				}
+				
+				//.views-field-field-imagenes-de-asi-lo-vivimos{
+					//margin: 1rem 0;
+				//}
+				
+				.views-field-field-fecha-de-inicio{
+					margin-bottom: 0;
+					display: inline-block;
+					margin-right: 1rem;
+				}
+				
+				.views-field-field-fecha-de-finalizacion{
+					display: inline-block;
+				}
+				
+				.views-field-title{
+					
+					a{
+						@include font-name-card ();
+						color: $color-30;
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		.view-footer{
+			
+			//.ver-todo{
+			//	
+			//}
+			
+			.button-red{
+				@include btn-primary;
+				width: 100%;
+				text-align: left;
+				padding: 1rem;
+				margin-top: 1rem;
+			}
 			
 		}
 		

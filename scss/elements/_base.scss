@@ -22,6 +22,7 @@ $color-50: #808080;
 $color-90: #e6e6e6;
 $color-100: #333333;
 $color-grey-borders: #E9E9E9;
+$color-grey-button: #CCCCCC;
 
 /*
     Font Styles:
@@ -33,8 +34,9 @@ $font-title-line-height: 40px;
 $font-title-text-align: left;
 $font-title-text-transform: uppercase;
 $font-title-font-style: italic;
-$font-title-font-weight: 800;
-$font-title-font-family: avenir-blackoblique;
+//$font-title-font-weight: 800;
+$font-title-font-family: avenir-black;
+$font-title-color: #222222;
 
 @mixin font-title () {
   font-size: $font-title-font-size;
@@ -42,8 +44,9 @@ $font-title-font-family: avenir-blackoblique;
   text-align: $font-title-text-align;
   text-transform: $font-title-text-transform;
   font-style: $font-title-font-style;
-  font-weight: $font-title-font-weight;
+//  font-weight: $font-title-font-weight;
   font-family: $font-title-font-family;
+  color: $font-title-color;
 }
 
 /* quotes font style */
@@ -52,8 +55,8 @@ $font-quote-line-height: 30px;
 $font-quote-text-align: left;
 $font-quote-text-transform: uppercase;
 $font-quote-font-style: italic;
-$font-quote-font-weight: 800;
-$font-quote-font-family: avenir-blackoblique;
+//$font-quote-font-weight: 800;
+$font-quote-font-family: avenir-black;
 
 @mixin font-quote () {
   font-size: $font-quote-font-size;
@@ -61,7 +64,7 @@ $font-quote-font-family: avenir-blackoblique;
   text-align: $font-quote-text-align;
   text-transform: $font-quote-text-transform;
   font-style: $font-quote-font-style;
-  font-weight: $font-quote-font-weight;
+//  font-weight: $font-quote-font-weight;
   font-family: $font-quote-font-family;
 }
 
@@ -72,8 +75,8 @@ $font-body-h-1-text-align: left;
 $font-body-h-1-color: #333333;
 $font-body-h-1-text-transform: uppercase;
 $font-body-h-1-font-style: italic;
-$font-body-h-1-font-weight: 800;
-$font-body-h-1-font-family: avenir-blackoblique;
+//$font-body-h-1-font-weight: 800;
+$font-body-h-1-font-family: avenir-black;
 
 @mixin font-body-h-1 () {
   font-size: $font-body-h-1-font-size;
@@ -82,7 +85,7 @@ $font-body-h-1-font-family: avenir-blackoblique;
   color: $font-body-h-1-color;
   text-transform: $font-body-h-1-text-transform;
   font-style: $font-body-h-1-font-style;
-  font-weight: $font-body-h-1-font-weight;
+//  font-weight: $font-body-h-1-font-weight;
   font-family: $font-body-h-1-font-family;
 }
 
@@ -92,7 +95,7 @@ $font-body-destacado-line-height: 26px;
 $font-body-destacado-text-align: left;
 $font-body-destacado-color: #4d4d4d;
 $font-body-destacado-font-style: normal;
-$font-body-destacado-font-weight: 400;
+//$font-body-destacado-font-weight: 400;
 $font-body-destacado-font-family: avenir-roman;
 
 @mixin font-body-destacado () {
@@ -101,8 +104,27 @@ $font-body-destacado-font-family: avenir-roman;
   text-align: $font-body-destacado-text-align;
   color: $font-body-destacado-color;
   font-style: $font-body-destacado-font-style;
-  font-weight: $font-body-destacado-font-weight;
+//  font-weight: $font-body-destacado-font-weight;
   font-family: $font-body-destacado-font-family;
+}
+
+/* block title m font style */
+$font-block-title-m-font-size: 19px;
+$font-block-title-m-line-height: 23px;
+$font-block-title-m-text-align: left;
+$font-block-title-m-color: #808080;
+$font-block-title-m-font-style: normal;
+//$font-block-title-m-font-weight: 400;
+$font-block-title-m-font-family: avenir-book;
+
+@mixin font-block-title-m () {
+  font-size: $font-block-title-m-font-size;
+  line-height: $font-block-title-m-line-height;
+  text-align: $font-block-title-m-text-align;
+  color: $font-block-title-m-color;
+  font-style: $font-block-title-m-font-style;
+//  font-weight: $font-block-title-m-font-weight;
+  font-family: $font-block-title-m-font-family;
 }
 
 /* body texto corrido font style */
@@ -111,7 +133,7 @@ $font-body-texto-corrido-line-height: 20px;
 $font-body-texto-corrido-text-align: left;
 $font-body-texto-corrido-color: #4d4d4d;
 $font-body-texto-corrido-font-style: normal;
-$font-body-texto-corrido-font-weight: 400;
+//$font-body-texto-corrido-font-weight: 400;
 $font-body-texto-corrido-font-family: avenir-book;
 
 @mixin font-body-texto-corrido () {
@@ -120,7 +142,7 @@ $font-body-texto-corrido-font-family: avenir-book;
   text-align: $font-body-texto-corrido-text-align;
   color: $font-body-texto-corrido-color;
   font-style: $font-body-texto-corrido-font-style;
-  font-weight: $font-body-texto-corrido-font-weight;
+//  font-weight: $font-body-texto-corrido-font-weight;
   font-family: $font-body-texto-corrido-font-family;
 }
 
@@ -128,7 +150,7 @@ $font-body-texto-corrido-font-family: avenir-book;
 $font-block-complementario-m-font-size: 16px;
 $font-block-complementario-m-line-height: 22px;
 $font-block-complementario-m-text-align: left;
-$font-block-complementario-m-color: #333333;
+$font-block-complementario-m-color: #4d4d4d;
 $font-block-complementario-m-text-transform: uppercase;
 $font-block-complementario-m-font-style: normal;
 //$font-block-complementario-m-font-weight: 400;
@@ -147,12 +169,12 @@ $font-block-complementario-m-font-family: avenir-roman;
 
 /* Block complementario s font style */
 $font-block-complementario-s-font-size: 13px;
-$font-block-complementario-s-line-height: 22px;
+$font-block-complementario-s-line-height: 17px;
 $font-block-complementario-s-text-align: left;
-$font-block-complementario-s-color: #333333;
+$font-block-complementario-s-color: #4d4d4d;
 $font-block-complementario-s-text-transform: uppercase;
 $font-block-complementario-s-font-style: normal;
-$font-block-complementario-s-font-weight: 400;
+//$font-block-complementario-s-font-weight: 400;
 $font-block-complementario-s-font-family: avenir-roman;
 
 @mixin font-block-complementario-s () {
@@ -162,7 +184,7 @@ $font-block-complementario-s-font-family: avenir-roman;
   color: $font-block-complementario-s-color;
   text-transform: $font-block-complementario-s-text-transform;
   font-style: $font-block-complementario-s-font-style;
-  font-weight: $font-block-complementario-s-font-weight;
+//  font-weight: $font-block-complementario-s-font-weight;
   font-family: $font-block-complementario-s-font-family;
 }
 
@@ -194,7 +216,7 @@ $font-title-grid-font-size: 16px;
 $font-title-grid-line-height: 19px;
 $font-title-grid-text-align: left;
 $font-title-grid-font-style: normal;
-$font-title-grid-font-weight: 800;
+//$font-title-grid-font-weight: 800;
 $font-title-grid-font-family: avenir-black;
 
 @mixin font-title-grid () {
@@ -202,8 +224,25 @@ $font-title-grid-font-family: avenir-black;
   line-height: $font-title-grid-line-height;
   text-align: $font-title-grid-text-align;
   font-style: $font-title-grid-font-style;
-  font-weight: $font-title-grid-font-weight;
+//  font-weight: $font-title-grid-font-weight;
   font-family: $font-title-grid-font-family;
+}
+
+/* title name vard style */
+$font-name-card-font-size: 16px;
+$font-name-card-line-height: 19px;
+$font-name-card-text-align: left;
+$font-name-card-font-style: normal;
+//$font-name-card-font-weight: 800;
+$font-name-card-font-family: avenir-heavy;
+
+@mixin font-name-card () {
+  font-size: $font-name-card-font-size;
+  line-height: $font-name-card-line-height;
+  text-align: $font-name-card-text-align;
+  font-style: $font-name-card-font-style;
+  //font-weight: $font-title-grid-font-weight;
+  font-family: $font-name-card-font-family;
 }
 
 /* title compl font style */
@@ -211,7 +250,7 @@ $font-title-compl-font-size: 19px;
 $font-title-compl-line-height: 24px;
 $font-title-compl-text-align: left;
 $font-title-compl-font-style: normal;
-$font-title-compl-font-weight: 800;
+//$font-title-compl-font-weight: 800;
 $font-title-compl-font-family: avenir-black;
 
 @mixin font-title-compl () {
@@ -219,7 +258,7 @@ $font-title-compl-font-family: avenir-black;
   line-height: $font-title-compl-line-height;
   text-align: $font-title-compl-text-align;
   font-style: $font-title-compl-font-style;
-  font-weight: $font-title-compl-font-weight;
+//  font-weight: $font-title-compl-font-weight;
   font-family: $font-title-compl-font-family;
 }
 
@@ -253,4 +292,19 @@ $font-small-pretitle-font-family: avenir-roman;
   text-align: $font-small-pretitle-text-align;
   font-style: $font-small-pretitle-font-style;
   font-family: $font-small-pretitle-font-family;
+}
+
+/* title program-card font style */
+$font-program-card-font-size: 13px;
+$font-program-card-line-height: 17px;
+$font-program-card-text-align: left;
+$font-program-card-font-style: normal;
+$font-program-card-font-family: avenir-light;
+
+@mixin font-program-card () {
+  font-size: $font-program-card-font-size;
+  line-height: $font-program-card-line-height;
+  text-align: $font-program-card-text-align;
+  font-style: $font-program-card-font-style;
+  font-family: $font-program-card-font-family;
 }

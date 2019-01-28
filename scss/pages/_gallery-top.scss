@@ -12,102 +12,110 @@
 				
 				.field-content{
 					
-					display: grid;
-					grid-template-columns: 10% 1fr 1fr 10% 1fr;
-					grid-template-rows: repeat(3, 97px);
+					@include display-grid;
+					@include grid-parent-5-columns (10%, 1fr, 1fr, 10%, 1fr);
+					@include grid-parent-3-rows (97px, 97px, 97px);
 					justify-items: stretch;
 					align-items: stretch;
 					
 					@media (max-width: $breakpoint_1){
-						grid-template-rows: repeat(3, 78px);
+						@include grid-parent-3-rows (78px, 78px, 78px);
 					}
 					
 					@media (max-width: $breakpoint_2){
-						grid-template-rows: repeat(3, 60px);
+						@include grid-parent-3-rows (60px, 60px, 60px);
 					}
 					
 					@media (max-width: $breakpoint_3){
-						grid-template-rows: 1fr;
-						grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+						@include grid-parent-3-rows (60px, 60px, 60px);
+						@include grid-parent-1-rows (1fr);
 					}
 					
 					@media (max-width: $breakpoint_4){
-						grid-template-columns: 1fr 1fr 1fr;
+						@include grid-parent-2-columns (1fr, 1fr);
+						// ---
+						// --- support microsoft edge, IE ---
+						@include reset-display (block, block);
 					}
 					
 					
 					a{
 						
+						&:after{
+							display: none;
+						}
+						
+						img{
+							
+							&:hover{
+								transform: scale(0.9);
+							}
+						
+						}
+						
 						&:nth-child(1){
-							grid-column-start: 1;
-							grid-column-end: 1;
-							grid-row-start: 1;
-							grid-row-end: 1;
+							@include grid-child-column (1, 1);
+							@include grid-child-row (1, 1);
 						}
 						
 						&:nth-child(2){
-							grid-column-start: 1;
-							grid-column-end: 1;
-							grid-row-start: 2;
-							grid-row-end: 2;
+							@include grid-child-column (1, 1);
+							@include grid-child-row (2, 2);
 						}
 						
 						&:nth-child(3){
-							grid-column-start: 1;
-							grid-column-end: 1;
-							grid-row-start: 3;
-							grid-row-end: end;
+							@include grid-child-column (1, 1);
+							@include grid-child-row (3, 4);
 						}
 						
 						&:nth-child(4){
-							grid-column-start: 2;
-							grid-column-end: 2;
-							grid-row-start: 1;
-							grid-row-end: end;
+							@include grid-child-column (2, 2);
+							@include grid-child-row (1, 4);
 						}
 						
 						&:nth-child(5){
-							grid-column-start: 3;
-							grid-column-end: 3;
-							grid-row-start: 1;
-							grid-row-end: end;
+							@include grid-child-column (3, 3);
+							@include grid-child-row (1, 4);
 						}
 						
 						&:nth-child(6){
-							grid-column-start: 4;
-							grid-column-end: 4;
-							grid-row-start: 1;
-							grid-row-end: 1;
+							@include grid-child-column (4, 4);
+							@include grid-child-row (1, 1);
 						}
 						
 						&:nth-child(7){
-							grid-column-start: 4;
-							grid-column-end: 4;
-							grid-row-start: 2;
-							grid-row-end: 2;
+							@include grid-child-column (4, 4);
+							@include grid-child-row (2, 2);
 						}
 						
 						&:nth-child(8){
-							grid-column-start: 4;
-							grid-column-end: 4;
-							grid-row-start: 3;
-							grid-row-end: end;
+							@include grid-child-column (4, 4);
+							@include grid-child-row (3, 4);
 						}
 						
 						&:nth-child(9){
-							grid-column-start: 5;
-							grid-column-end: 5;
-							grid-row-start: 1;
-							grid-row-end: end;
+							@include grid-child-column (5, 5);
+							@include grid-child-row (1, 4);
 						}
 						
 						&:nth-child(n+1){
 							
-							@media (max-width: $breakpoint_3){
-								grid-column-start: initial;
-								grid-column-end: initial;
-								grid-row-start: initial;
-								grid-row-end: initial;
+							@media (max-width: $breakpoint_4){
+								@include grid-child-column (auto, auto);
+								@include grid-child-row (auto, auto);
+								
+								// ---
+								// --- support microsoft edge ---
+								@supports (-ms-ime-align: auto) {
+									@include galeria-asi-lo-vivimos;								
+								}
+								
+								// ---
+								// --- support internet explorer ---
+								@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
+									@include galeria-asi-lo-vivimos;		
+								}
+								
 							}
 							
 						}

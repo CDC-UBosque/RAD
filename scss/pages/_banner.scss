@@ -5,6 +5,15 @@
 	
 	.views-row{
 		position: relative;
+		
+		img{
+			
+			&:hover{
+				transform: initial;
+			}
+			
+		}
+		
 	}
 	
 	.views-field-field-etiqueta{

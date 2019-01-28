@@ -1,0 +1,73 @@
+// ------------------------ registro page --------------------------- //
+// --------------------------------------------------- //
+
+.node-217{
+	
+	.region-featured-top{
+		position: relative;
+		
+		.webform-registro{
+			position: absolute;
+		    z-index: 1;
+		    background: $color-blanco-rad;
+		    box-sizing: border-box;
+		    max-width: 386px;
+		    padding: 1rem 2rem;
+		    right: 5%;
+		    top: 30%;
+		    
+		    @media (max-width: $breakpoint_2){
+			    max-width: 320px;
+		    }
+		    
+		    @media (max-width: $breakpoint_3){
+			    padding: 1rem;
+			    max-width: initial;
+			    width: 100%;
+			    right: initial;
+			    top: initial;
+			    position: relative;
+		    }
+		    
+		    .panel{
+			    margin: 0;
+			    
+			    .panel-heading{
+				    
+				    .panel-title{
+					    @include font-body-h-1 ();
+				    }
+				    
+			    }
+			    
+		    }
+		    
+		    .panel-body{
+			    padding-bottom: 0;
+		    }
+		    
+		}
+		
+	}
+	
+	.row{
+		
+		@include display-grid;
+		@include grid-parent-2-columns (1fr, 1fr);
+		grid-gap: 1rem;
+		
+		@media (max-width: $breakpoint_3){
+			@include grid-parent-1-columns (1fr);
+		}
+		
+		.col-sm-12{
+			max-width: initial;
+		}
+		
+	}
+	
+	#second.row{
+		@include grid-parent-1-columns (1fr);
+	}
+	
+}

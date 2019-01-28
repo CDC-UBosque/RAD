@@ -3,18 +3,70 @@
 
 .etiquetas-home{
 	
-	border: 1px solid red;
+	position: absolute;
+	right: 2.4%;
+	top: 5%;
+	z-index: 30;
+	
+	@media (max-width: 1440px){
+		right: 0;
+	}
+	
+	@media (max-width: $breakpoint_3){
+		position: relative;
+		right: initial;
+		top: initial;
+		width: 95%;
+		margin: auto;
+	}
+	
 	
 	ul{
 		
+		@media (max-width: $breakpoint_3){
+			white-space: nowrap; 
+			overflow-x: auto; 
+			-webkit-overflow-scrolling: touch;
+			-ms-overflow-style: -ms-autohiding-scrollbar; 
+			//position: relative;
+			
+			&:after{
+				@include right-arrow;
+			    right: -0.5rem;
+			    top: 0.9rem;
+			}
+			
+			&:before{
+				@include left-arrow;
+				left: -0.5rem;
+				top: 0.9rem;
+			}
+			
+			&::-webkit-scrollbar{
+				display: none;
+			}
+				
+		}
+		
 		li{
+			text-align: right;
+			margin-bottom: 0.1rem;
+			
+			&:first-child{
+				display: none;
+			}
+			
+			@media (max-width: $breakpoint_3){
+				display: inline-block;
+			}
 			
 			a{
-				display: table;
-				margin: .2rem 0;
+				display: inline-block;
+				//margin: rem 0;
 				color: $color-30;
 				background: $color-blanco-rad;
 				@include font-link-text;
+				text-align: right;
 				
 				&:hover{
 					background: $color-blanco-rad;

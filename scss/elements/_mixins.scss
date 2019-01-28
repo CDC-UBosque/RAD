@@ -1,11 +1,154 @@
+@mixin resets-edge-ie ($css-rule, $css-property){
+	// ---
+	// --- support microsoft edge ---
+	@supports (-ms-ime-align: auto) {
+		#{$css-rule}: $css-property;							
+	}
+	
+	// ---
+	// --- support internet explorer ---
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
+		#{$css-rule}: $css-property;		
+	}
+}
+
+// ------------------------ Display grid cross browser settings --------------------------- //
+// --------------------------------------------------- //
+// display grid parent
+@mixin display-grid{
+	
+	@supports (display: grid) {
+		display: grid;
+	}
+	
+	@supports (-ms-ime-align: auto) {
+		display: grid;							
+	}
+	
+	@supports not (display: grid){
+		display: inline-block;
+	}
+	
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
+		display: -ms-grid;		
+	}
+	
+}
+
+// display flex parent
+@mixin display-flex{
+	
+	@supports (display: flex) {
+		display: flex;
+	}
+	
+	@supports (-ms-ime-align: auto) {
+		display: flex;							
+	}
+	
+	@supports not (display: flex){
+		display: inline-block;
+		width: 100%;
+	}
+	
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
+		display: -ms-grid;	
+		width: 100%;	
+	}
+	
+}
+
+// ------------------------ Mixin cards for repositories --------------------------- //
+// --------------------------------------------------- //
 @mixin cards{
+	
+	&:nth-child(n+2):nth-child(odd):nth-child(-n+8){
+		
+		.views-field-field-imagen-principal-del-event,
+		.views-field-field-imagenes-de-asi-lo-vivimos{
+			
+			.field-content{
+				height: 330px;
+				
+				@media (max-width: $breakpoint_2){
+					height: 230px;
+				}
+				
+				@media (max-width: $breakpoint_4){
+					height: initial;
+				}
+				
+			}
+			
+			a{
+				height: inherit;
+			}
+			
+		}
+		
+	}
+	
+	&:nth-child(n+1):nth-child(even):nth-child(-n+6){
+		
+		.views-field-field-imagen-principal-del-event,
+		.views-field-field-imagenes-de-asi-lo-vivimos,{
+			
+			.field-content{
+				height: 150px;
+				
+				@media (max-width: $breakpoint_4){
+					height: initial;
+				}
+				
+			}
+			
+			a{
+				height: inherit;
+			}
+			
+		}
+		
+	}
+	
 	.views-field-field-imagen-principal-del-event,
 	.views-field-field-imagenes-de-asi-lo-vivimos{
-		margin: -1.5rem -1.5rem 0;
+		
+		
+		.field-content{
+			margin: -1.5rem;
+			@include display-grid;
+		}
+			
+		a{
+			
+			&:after{
+				display: none;
+			}
+			
+			img{
+				transition: all .2s ease-in-out;
+				height: inherit;
+				object-fit: cover;
+				width: 100%;
+			}
+			
+		}
+		
+	}
+	
+	.views-field-field-imagenes-de-asi-lo-vivimos{
+		
+		a{
+			//min-width: 400px;
+			//border: 1px solid red;
+			height: inherit;
+			width: 100%;
+		}
+		
 	}
 	
 	.views-field-field-catego{
-		margin: 1rem 0 .5rem;
+		margin: 0rem 0 .5rem;
 		
 		.contextual-region{
 			position: initial;
@@ -21,6 +164,12 @@
 			position: absolute;
 			top: 1rem;
 			left: 1rem;
+			pointer-events: none;
+		}
+		
+		.field--name-name-text{
+			margin-top: 1rem;
+			display: inline-block;
 		}
 		
 	}
@@ -28,8 +177,9 @@
 	.views-field-title{
 		
 		.field-content{
-			@include font-title-grid ();
+			@include font-name-card ();
 			a{
+				@include font-name-card ();
 				color: $color-100;
 			}
 		}
@@ -45,6 +195,7 @@
 	text-decoration: none;
 	overflow: hidden;
 	display: inline-block;
+	font-size: 13px;
 	
 	&:after{
 		position: absolute;
@@ -55,6 +206,7 @@
 		top: 50%;
 		height: 2px;
 		transition: all .5s ease-in-out;
+		visibility: hidden;		
 	}
 	
 	&:hover{
@@ -65,8 +217,293 @@
 		&:after{
 		    width: 70%;
 		    left: 100%;
+		    visibility: visible;
 		}
 		
 	}
 	
+}
+
+@mixin right-arrow{
+	position: absolute;
+	content: "";
+	width: 4px;
+	height: 7px;
+	background: url(../images/svg/right.svg);
+	background-repeat: no-repeat;
+}
+
+@mixin left-arrow{
+	position: absolute;
+	content: "";
+	width: 4px;
+	height: 7px;
+	background: url(../images/svg/left.svg);
+	background-repeat: no-repeat;
+}
+
+@mixin btn-primary{
+	background: $color-rojo-rad;
+	border-color: $color-rojo-rad;
+	display: block;
+	@include font-block-complementario-s ();
+	letter-spacing: 1.8px;
+	color: $color-blanco-rad;
+	border-radius: 0px;
+    width: 100%;
+    text-align: center;
+	padding: 0.3rem 0.7rem;
+	width: fit-content;
+	transition: all .1s ease-in-out;
+	
+	@include resets-edge-ie (display, inline-block);
+	@include resets-edge-ie (width, auto);
+	
+	&:hover{
+		background: $color-blanco-rad;
+		color: $color-rojo-rad;
+		border-color: $color-rojo-rad;
+	}
+	
+}
+
+@mixin btn-primary-yellow{
+	background: $color-amarillo-rad;
+	border-color: $color-amarillo-rad;
+	display: block;
+	@include font-block-complementario-s ();
+	letter-spacing: 1.8px;
+	color: $color-100;
+	border-radius: 0px;
+    width: 100%;
+    text-align: center;
+	padding: 0.3rem 0.7rem;
+	width: fit-content;
+	
+	@include resets-edge-ie (display, inline-block);
+	@include resets-edge-ie (width, auto);
+	
+	&:hover{
+		background: $color-blanco-rad;
+		//color: $color-amarillo-rad;
+		border-color: $color-amarillo-rad;
+	}
+	
+}
+
+@mixin programa-info{
+	
+	.field--label{
+		font-weight: unset;
+		@include font-small-pretitle ();
+		color: $color-50;
+	}
+	
+	.field--item{
+		font-weight: unset;
+		@include font-name-card () ;
+		font-size: 19px;
+		line-height: 24px;
+	}
+	
+}
+
+// ------------------------ cross browsers mixins --------------------------- //
+// --------------------------------------------------- //
+
+@mixin width-max-content{
+	width: max-content;
+	width: intrinsic;
+	width: -moz-max-content;
+	width: -webkit-max-content;
+	width: -o-max-content;
+}
+
+// ------------------------ Display grid columns parent cross browser settings --------------------------- //
+// --------------------------------------------------- //
+// display grid child parents
+@mixin grid-parent-1-columns ($x1) {
+	  grid-template-columns: $x1;
+  -ms-grid-columns: $x1;
+}
+
+@mixin grid-parent-2-columns ($x1, $x2) {
+	  grid-template-columns: $x1 $x2;
+  -ms-grid-columns: $x1 $x2;
+}
+
+@mixin grid-parent-3-columns ($x1, $x2, $x3) {
+	  grid-template-columns: $x1 $x2 $x3;
+  -ms-grid-columns: $x1 $x2 $x3;
+}
+
+@mixin grid-parent-4-columns ($x1, $x2, $x3, $x4) {
+	  grid-template-columns: $x1 $x2 $x3 $x4;
+  -ms-grid-columns: $x1 $x2 $x3 $x4;
+}
+
+@mixin grid-parent-5-columns ($x1, $x2, $x3, $x4, $x5) {
+	  grid-template-columns: $x1 $x2 $x3 $x4 $x5;
+  -ms-grid-columns: $x1 $x2 $x3 $x4 $x5;
+}
+
+@mixin grid-parent-6-columns ($x1, $x2, $x3, $x4, $x5, $x6) {
+	  grid-template-columns: $x1 $x2 $x3 $x4 $x5 $x6;
+  -ms-grid-columns: $x1 $x2 $x3 $x4 $x5 $x6;
+}
+
+@mixin grid-parent-7-columns ($x1, $x2, $x3, $x4, $x5, $x6, $x7) {
+	  grid-template-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7;
+  -ms-grid-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7;
+}
+
+@mixin grid-parent-8-columns ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8) {
+	  grid-template-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8;
+  -ms-grid-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8;
+}
+
+@mixin grid-parent-9-columns ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8, $x9) {
+	  grid-template-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9;
+  -ms-grid-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9;
+}
+
+@mixin grid-parent-10-columns ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8, $x9, $x10) {
+	  grid-template-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10;
+  -ms-grid-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10;
+}
+
+@mixin grid-parent-11-columns ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8, $x9, $x10, $x11) {
+	  grid-template-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10 $x11;
+  -ms-grid-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10 $x11;
+}
+
+@mixin grid-parent-12-columns ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8, $x9, $x10, $x11, $x12) {
+	  grid-template-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10 $x11 $x12;
+  -ms-grid-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10 $x11 $x12;
+}
+
+// ------------------------ Display grid rows parent cross browser settings --------------------------- //
+// --------------------------------------------------- //
+// display grid child parents
+@mixin grid-parent-1-rows ($x1) {
+	grid-template-rows: $x1;
+  -ms-grid-rows: $x1;
+}
+
+@mixin grid-parent-2-rows ($x1, $x2) {
+	  grid-template-rows: $x1 $x2;
+  -ms-grid-rows: $x1 $x2;
+}
+
+@mixin grid-parent-3-rows ($x1, $x2, $x3) {
+	  grid-template-rows: $x1 $x2 $x3;
+  -ms-grid-rows: $x1 $x2 $x3;
+}
+
+@mixin grid-parent-4-rows ($x1, $x2, $x3, $x4) {
+	  grid-template-rows: $x1 $x2 $x3 $x4;
+  -ms-grid-rows: $x1 $x2 $x3 $x4;
+}
+
+@mixin grid-parent-5-rows ($x1, $x2, $x3, $x4, $x5) {
+	  grid-template-rows: $x1 $x2 $x3 $x4 $x5;
+  -ms-grid-rows: $x1 $x2 $x3 $x4 $x5;
+}
+
+@mixin grid-parent-6-rows ($x1, $x2, $x3, $x4, $x5, $x6) {
+	  grid-template-rows: $x1 $x2 $x3 $x4 $x5 $x6;
+  -ms-grid-rows: $x1 $x2 $x3 $x4 $x5 $x6;
+}
+
+@mixin grid-parent-7-rows ($x1, $x2, $x3, $x4, $x5, $x6, $x7) {
+	  grid-template-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7;
+  -ms-grid-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7;
+}
+
+@mixin grid-parent-8-rows ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8) {
+	  grid-template-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8;
+  -ms-grid-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8;
+}
+
+@mixin grid-parent-9-rows ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8, $x9) {
+	  grid-template-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9;
+  -ms-grid-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9;
+}
+
+@mixin grid-parent-10-rows ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8, $x9, $x10) {
+	  grid-template-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10;
+  -ms-grid-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10;
+}
+
+@mixin grid-parent-11-rows ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8, $x9, $x10, $x11) {
+	  grid-template-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10 $x11;
+  -ms-grid-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10 $x11;
+}
+
+@mixin grid-parent-12-rows ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8, $x9, $x10, $x11, $x12) {
+	  grid-template-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10 $x11 $x12;
+  -ms-grid-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10 $x11 $x12;
+}
+
+// display grid child columns
+@mixin grid-child-column ($col-start, $col-end) {
+	  grid-column: #{$col-start}/#{$col-end};
+  -ms-grid-column: $col-start;
+  -ms-grid-column-span: $col-end - $col-start;
+}
+
+// display grid child rows
+@mixin grid-child-row ($row-start, $row-end) {
+	  grid-row: #{$row-start}/#{$row-end};
+  -ms-grid-row: $row-start;
+  -ms-grid-row-span: $row-end - $row-start;
+}
+
+
+// ------------------------ Microsoft edge & IE fixes --------------------------- //
+// --------------------------------------------------- //
+@mixin patrocinadores{
+	display: block;
+	
+	@media (max-width: $breakpoint_4){
+		text-align: center;
+	}
+	
+	.field--item{
+		display: inline-block;
+		width: 28%;
+		vertical-align: middle;
+		margin-right: 1rem;
+		
+		@media (max-width: $breakpoint_4){
+			width: 48;
+		}
+		
+		&:last-child,
+		&:nth-child(3){
+			margin-right: 0;
+		}
+		
+	}
+}
+
+@mixin galeria-asi-lo-vivimos{
+	display: inline-block;
+	width: 48%;
+	margin: 0;
+	padding: 0;
+}
+
+@mixin reset-display ($display-edge, $display-ie){
+	// ---
+	// --- support microsoft edge ---
+	@supports (-ms-ime-align: auto) {
+		display: $display-edge;							
+	}
+	
+	// ---
+	// --- support internet explorer ---
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
+		display: $display-ie;		
+	}
 }

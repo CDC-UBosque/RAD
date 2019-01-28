@@ -1,25 +1,46 @@
 // ------------------------ menu etiquetas --------------------------- //
 // --------------------------------------------------- //
 
+#navbar-collapse.open{
+    margin-bottom: 4rem;
+    
+    @media (max-width: $breakpoint_3){
+	    margin-bottom: 23rem;
+    }
+    
+}
+
 #navbar-collapse{
 	text-align: center;
 	padding: 0;
+	
+	@media (max-width: $breakpoint_3){
+		margin: 0;
+		border-bottom: 1px solid $color-grey-borders;
+	}
 	
 	ul{
 		
 		float: none;
 		
+		@media (max-width: $breakpoint_3){
+			margin: 7.5px 0;
+		}
+		
 		li{
 			
 			float: none;
-			display: inline-block;
+			display: inline-flex;
 			position: initial;
+			margin-bottom: 0;
 			
 			a{
 				color: $color-30;
 				position: relative;
 				@include font-link-text;
 				transition: all .1s ease-in-out;
+				overflow: visible;
+				//z-index: 1;
 				
 				&:before{
 					background: $color-rojo-rad;
@@ -32,6 +53,7 @@
 					border-radius: 6px;
 					opacity: 0;
 					transition: all .1s ease-in-out;
+					z-index: 2000;
 				}
 				
 				&:after{
@@ -42,7 +64,7 @@
 					color: $color-rojo-rad;
 					
 					&:before{
-						bottom: 0;
+						bottom: -7%;
 						opacity: 1;
 					}
 					
@@ -51,14 +73,14 @@
 			}
 			
 			a[aria-expanded="true"],
-			a[aria-expanded="false"],
+			//a[aria-expanded="false"],
 			a.is-active,
 			.active-trail{
 				background: none;
 				
 				&:before{
 					opacity: 1;
-					bottom: 0;
+					bottom: -7%;
 				}
 			}
 			
@@ -81,6 +103,7 @@
 				border: 0;
 				width: 100%;
 				//position: relative;
+				
 				&::before,
 				&::after {
 				    content: "";
@@ -108,7 +131,62 @@
 				
 			}
 			
+			&:nth-child(n+7){
+				display: none;
+				position: relative;
+				
+				@media (max-width: 570px){
+					display: inline-block;
+				}
+				
+			}
+			
+			&:nth-child(7){
+				padding-left: 1rem;
+				
+				&:before{
+					position: absolute;
+					content: "";
+					background: url("../images/svg/oferta.svg");
+					background-repeat: no-repeat;
+					width: 14px;
+					height: 14px;
+					left: 6%;
+					top: 0.6rem;
+				}
+				
+				a{
+					color: $color-azul-rad;
+					
+				}
+				
+			}
+			
+			&:nth-child(8){
+				padding-left: 1rem;
+				
+				&:before{
+					position: absolute;
+					content: "";
+					background: url("../images/svg/parte.svg");
+					background-repeat: no-repeat;
+					width: 14px;
+					height: 14px;
+					left: 6%;
+					top: 0.6rem;
+				}
+					
+				a{
+					color: $color-rojo-rad;
+				}
+				
+			}
+			
 		}
+		
+		//.dropdown{
+			//position: relative;
+		//}
 		
 		.open{
 			
@@ -119,6 +197,41 @@
 			.dropdown-menu{
 				
 				display: flex;
+				
+				@media (max-width: $breakpoint_3){
+					position: absolute;
+					//@include width-max-content;
+					display: inline-block;
+					
+					&::before,
+					&::after{
+						display: none;	
+					}
+					
+					li{
+						display: block;
+						z-index: 10000000;
+						position: relative;
+						
+						&:nth-child(n+7){
+							padding: 0;
+							
+							&:before{
+								display: none;	
+							}	
+													
+						}
+						
+						a{
+							&:before{
+							    left: 0.5%;
+							    bottom: 45%;
+							}
+						}
+						
+					}
+					
+				}
 				
 				a{
 					padding: 1rem;

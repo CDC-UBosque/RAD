@@ -8,14 +8,18 @@
 .page-node-type-convocatoria,
 .page-node-type-editorial,
 .page-node-type-evento,
-.page-node-type-proyecto {
+.page-node-type-proyecto,
+.path-programas,
+.page-node-type-programa-academico,
+.page-node-type-representante,
+.page-node-type-institucion {
 	
 	.row{
 		
 		background: $color-blanco-rad;
 		padding: 0 3rem 3rem;
 		position: relative;
-		display: inline-block;
+		@include display-flex;
 		margin: 0;
 
 		&::before,
@@ -51,6 +55,24 @@
 					>div{
 						margin-bottom: 1rem;
 						word-break: break-word;
+						
+						&:last-child{
+							
+							p{
+								
+								img{
+									width: calc(100% + 5rem - 2px);
+									
+									@media (max-width: $breakpoint_3){
+										width: calc(100% + 2rem - 2px);
+									}
+									
+								}
+									
+							}
+							
+						}
+						
 					}
 					
 					//
@@ -63,7 +85,6 @@
 					// DOTS SECTION
 					
 					.field--name-field-catego{
-						//padding-left: 1.5rem;
 						@include font-block-complementario-m ();
 						
 						.layout__region{
@@ -76,21 +97,6 @@
 						}
 						
 					}
-					
-					/*.punto-concurso{
-						position: relative;
-						
-						&:before{
-							position: absolute;
-							content: "";
-							width: 15px;
-							height: 15px;
-							background: $color-azul-rad;
-							left: 0;
-							border-radius: 100%;
-						}
-						
-					}*/
 					
 					// fechas inicio
 					// fechas fin
@@ -105,7 +111,131 @@
 						}
 						
 						.field--item{
-							@include font-title-compl ();
+							@include font-block-complementario-m ();
+							text-transform: none;
+						}
+						
+					}
+					
+					.field--name-field-fecha-de-finalizacion{
+						position: relative;
+						margin-bottom: 2rem;
+						
+						&:before{
+							position: absolute;
+							content:"";
+							height: 1px;
+							left: 0;
+							bottom: -1rem;
+							width: 30%;
+							background: $color-50;
+						}
+						
+					}
+					
+					// linea proyecto
+					.field--name-field-linea{
+						
+						.field--label{
+							font-weight: unset;
+							@include font-small-pretitle ();
+							color: $color-50;
+						}
+						
+						.field--item{
+							font-weight: unset;
+							@include font-block-complementario-m ();
+						}
+						
+					}
+					
+					// fecha proyecto
+					.field--name-field-fecha-del-proyecto{
+						
+						.field--label{
+							font-weight: unset;
+							@include font-small-pretitle ();
+							color: $color-50;
+						}
+						
+						.field--item{
+							font-weight: unset;
+							@include font-block-complementario-m ();
+						}
+						
+					}
+					
+					// enlace externo
+					.field--name-field-sitio-web{
+						position: relative;
+						margin-top: 1rem;
+						padding-top: 1rem;
+						
+						&:after{
+							position: absolute;
+							content: "";
+							background: $color-50;
+						    width: 30%;
+						    left: 0;
+						    top: -15%;
+							height: 1px;
+						}
+						
+						a{
+							font-size: 16px;
+						}
+						
+					}
+					
+					// documentos relacionados
+					.field--name-field-documentos-relacionados{
+						position: relative;
+						margin-top: 2rem;
+						
+						&:after{
+							position: absolute;
+							content: "";
+							background: $color-50;
+						    width: 30%;
+						    left: 0;
+						    top: -15%;
+							height: 1px;
+						}
+						
+						.field--label{
+							font-weight: unset;
+							@include font-small-pretitle ();
+							color: $color-50;
+							margin-bottom: .5rem
+						}
+						
+						.field--item{
+							
+							.file{
+								margin: 0;
+								
+								.file-icon,
+								.file-size{
+									display: none;
+								}
+								
+								.file-link{
+									border: 0;
+									
+									a{
+										@include font-body-texto-corrido ();
+										font-family: 'avenir-roman';
+										
+										&:hover{
+											color: $color-rojo-rad;
+										}
+										
+									}
+									
+								}
+								
+							}
+							
 						}
 						
 					}
@@ -209,23 +339,183 @@
 							@include font-small-pretitle ();
 							font-weight: initial;
 							color: $color-50;
+							margin-bottom: .5rem;
 						}
 						
 						.field--items{
-							display: grid;
-							grid-template-columns: 1fr 1fr 1fr;
+							@include display-grid;
+							@include grid-parent-3-columns (1fr, 1fr, 1fr);
 							grid-gap: 1rem;
 							justify-items: center;
 							align-items: center;
 							
+							// ---
+							// --- support microsoft edge ---
+							@supports (-ms-ime-align: auto) {
+								@include patrocinadores;								
+							}
+							
+							// ---
+							// --- support internet explorer ---
+							@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
+								@include patrocinadores;	
+							}
+							
 							@media (max-width: $breakpoint_2){
-								grid-template-columns: 1fr 1fr 1fr 1fr;
+								@include grid-parent-4-columns (1fr, 1fr, 1fr, 1fr);
 							}
 							
 							@media (max-width: $breakpoint_4){
-								grid-template-columns: 1fr 1fr;
+								@include grid-parent-2-columns (1fr, 1fr);
 							}
 							
+							a{
+								
+								&:after{
+									display: none;
+								}
+								
+							}
+							
+						}
+						
+					}
+					
+					//
+					// galeria
+					.galeria-en-nodo{
+						padding-bottom: 1rem;
+						
+						.field--label{
+							display: inline-block;
+							border-top: 1px solid $color-grey-borders;
+							padding-top: 1rem;
+						}
+						
+						.field--item{
+							margin-top: 1rem;
+							
+							h2{
+								display: none;	
+							}
+							
+							// contenido galeria
+							.content{
+								
+								.field--name-field-imagen-de-la-galeria{
+									margin-left: -105%;
+									
+									@media (max-width: $breakpoint_1){
+										margin-left: -107%;
+									}
+									
+									@media (max-width: $breakpoint_2){
+										margin-left: 0%;
+									}
+									
+									@media (max-width: $breakpoint_3){
+										margin-left: 0%;
+									}
+									
+									@media (max-width: $breakpoint_4){
+										margin-left: 0%;
+									}
+									
+									.jcarousel-wrapper{
+										width: 1000px;
+										border: 0;
+										max-width: initial;
+										box-shadow: none;
+										height: initial;
+										margin: 0;
+										position: relative;
+										z-index: 1;
+										border-radius: 0;
+										
+										@media (max-width: $breakpoint_1){
+											width: 780px;
+										}
+										
+										@media (max-width: $breakpoint_2){
+											width: 560px;
+										}
+										
+										@media (max-width: $breakpoint_3){
+											width: 500px;
+											margin: auto;											
+										}
+										
+										@media (max-width: 670px){
+											width: 400px;										
+										}
+										
+										@media (max-width: $breakpoint_4){
+											width: 300px;
+										}
+										
+										@media (max-width: 460px){
+											width: 200px;
+										}
+										
+										@media (max-width: 350px){
+											width: 120px;
+										}
+										
+										.jcarousel{
+											width: 100%;
+											display: list-item;
+											
+											.jcarousel-container-horizontal{
+												
+												li{
+													height: auto;
+													margin-right: .5rem;
+												}
+												
+											}
+											
+										}
+										
+										> a{
+											background: red;
+											text-shadow: none;
+											box-shadow: none;
+											top: 35%;
+											z-index: 10;
+											height: 51px;
+											
+											@media (max-width: 350px){
+												top: 15%;
+											}
+											
+										}
+										
+										.jcarousel-control-prev{
+											background: url(../images/svg/icon/gallery-left.svg);
+											background-repeat: no-repeat;
+										}
+										
+										.jcarousel-control-next{
+											background: url(../images/svg/icon/gallery-right.svg);
+											background-repeat: no-repeat;
+										}
+									
+									}
+									
+								}
+								
+							}
+							
+						}
+						
+					}
+					
+					//
+					// actividades relacionadas
+					.field--name-field-actividades-relacionadas-a{
+						
+						.field--label{
+							margin-bottom: 1rem;
 						}
 						
 					}
@@ -240,7 +530,11 @@
 	
 }
 
-.page-node-type-asi-lo-vivimos	{
+.page-node-type-asi-lo-vivimos,
+.path-programas,
+.page-node-type-representante,
+.page-node-type-institucion,
+.page-node-type-programa-academico	{
 	
 	.row{
 

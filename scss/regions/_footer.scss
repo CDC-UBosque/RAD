@@ -7,6 +7,14 @@ footer.footer{
 	border: 0px;
 	padding: 0 1rem;
 	
+	img{
+		
+		&:hover{
+			transform: initial;
+		}
+		
+	}
+	
 	//
 	// top section - logos
 	// 
@@ -14,11 +22,10 @@ footer.footer{
 		background: $color-rojo-rad;
 		padding: 2rem 0;
 		position: relative;
-		display: grid;
-		grid-template-columns: 10% 1fr 10%;
+		@include display-grid;
+		@include grid-parent-3-columns (10%, 1fr, 10%);
+		@include grid-parent-1-rows (auto);
 		grid-gap: 1rem;
-		grid-template-areas: 
-		    "left middle right";
 		&::before,
 		&::after {
 		    content: "";
@@ -29,32 +36,37 @@ footer.footer{
 		    position: absolute;
 		    top: 0;
 		    left: 100%;
+		    
 		}
 		&::after {
 		    left: auto;
 		    right: 100%;
+		    
 		}
 		
 		@media (max-width: $breakpoint_3){
-			grid-template-columns: 1fr;
+			@include grid-parent-1-columns (1fr);
+			@include grid-parent-1-rows (auto);
 			grid-gap: 1rem;
-			grid-template-areas: 
-			    "middle";
 		}
 		
 		.region-footer-fourth{
-			grid-area: middle;
-			display: grid;
-			grid-template-columns: 1fr;
+			//grid-area: middle;
+			@include display-grid;
+			@include grid-parent-1-columns (1fr);
+			@include grid-parent-1-rows (auto);
+			@include grid-child-column (2, 2);
 			grid-gap: 1rem;
-			grid-template-areas: 
-			    "top"
-			    "middle"
-			    "bottom";
+			
+			@media (max-width: $breakpoint_3){
+				@include grid-child-column (1, 2);
+				justify-items: center;
+			}
 			    
 			.footer-red{
-				grid-area: top;
-				justify-self: center;
+				//@include grid-child-row (1, 1);
+				@include display-grid;
+				justify-content: center;
 				
 				p{
 					color: $color-blanco-rad;	
@@ -65,20 +77,21 @@ footer.footer{
 			//
 			// social media
 			.footer-redes{
-				grid-area: middle;
 				grid-gap: 1rem;
-			    grid-template-columns: repeat(4, 1fr);
-			    display: grid;
+			    @include display-grid;
+			    @include grid-parent-4-columns (1fr, 1fr, 1fr, 1fr);
+			    @include grid-parent-1-rows (auto);
+			    @include grid-child-row (2, 2);
 			    
 			    @media (max-width: $breakpoint_3){
-					grid-template-columns: 1fr;
+				    @include grid-parent-1-columns (1fr);
 				}
 			    
 			    .field--name-body{
-				    grid-column: 3;
+				    @include grid-child-column (3, 3);
 				    
 				    @media (max-width: $breakpoint_3){
-						grid-column: 1;
+					    @include grid-child-column (1, 1);
 					}
 				
 			    }
@@ -87,6 +100,11 @@ footer.footer{
 					color: $color-blanco-rad;	
 					font-size: 11px;
 					display: flex;
+					text-align: center;
+					
+					// ---
+					// --- support microsoft edge, IE ---
+					@include reset-display (block, block);
 					
 					a{
 						display: inline-block;
@@ -99,7 +117,7 @@ footer.footer{
 			//
 			// social media
 			.footer-afiliada-a{
-				grid-area: bottom;
+				@include grid-child-row (3, 3);
 				
 				p{
 					color: $color-blanco-rad;	
@@ -109,27 +127,66 @@ footer.footer{
 				//
 				// title
 				.field--name-body{
-					
+					margin-bottom: 1rem;
+					@include grid-child-row (1, 1);
 				}
 				
 				//
 				// image
 				.field--name-field-imagen{
-					display: grid;
-					grid-template-columns: repeat(4, 1fr);
+					@include grid-child-row (2, 2);
+					@include display-grid;
+					@include grid-parent-4-columns (1fr, 1fr, 1fr, 1fr);
+					@include grid-parent-1-rows (auto);
 					grid-gap: 1rem;
 					
 					@media (max-width: $breakpoint_3){
-						grid-template-columns: repeat(2, 1fr);
-					}
-					
-					@media (max-width: $breakpoint_4){
-						grid-template-columns: 1fr;
+						@include grid-parent-1-columns (1fr);
 					}
 					    
-					    .field--item{
-						    justify-self: center;
+					.field--item{
+					    justify-self: center;
+					    
+					    &:nth-child(1){
+						    @include grid-child-column(1, 2);
+							@include grid-child-row (1, 1);
+							
 					    }
+					    
+					    &:nth-child(2){
+						    @include grid-child-column(2, 3);
+							@include grid-child-row (1, 1);
+							
+							@media (max-width: $breakpoint_3){
+								@include grid-child-column(1, 2);
+								@include grid-child-row (2, 2);
+							}
+							
+					    }
+					    
+					    &:nth-child(3){
+						    @include grid-child-column(3, 4);
+							@include grid-child-row (1, 1);
+							
+							@media (max-width: $breakpoint_3){
+								@include grid-child-column(1, 2);
+								@include grid-child-row (3, 3);
+							}
+							
+					    }
+					    
+					    &:nth-child(4){
+						    @include grid-child-column(4, 5);
+							@include grid-child-row (1, 1);
+							
+							@media (max-width: $breakpoint_3){
+								@include grid-child-column(1, 2);
+								@include grid-child-row (4, 4);
+							}
+							
+					    }
+					    
+					}
 					    
 				}
 				
@@ -146,7 +203,8 @@ footer.footer{
 		background: $color-blanco-rad;
 		padding: 1rem 0;
 		position: relative;
-		display: grid;
+		@include display-grid;
+		justify-content: center;
 		&::before,
 		&::after {
 		    content: "";
@@ -157,10 +215,12 @@ footer.footer{
 		    position: absolute;
 		    top: 0;
 		    left: 100%;
+		    
 		}
 		&::after {
 		    left: auto;
 		    right: 100%;
+		    
 		}
 		
 		p{

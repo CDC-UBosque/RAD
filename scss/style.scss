@@ -1,16 +1,20 @@
 // ------------------------------------ Global elements ------------------------------------ 
+@import 'elements/_typography';
 @import 'elements/_base';
 @import 'elements/_mixins';
 @import 'elements/_resets';
 @import 'elements/_generals';
 @import 'elements/_iframes';
+@import 'elements/_tabs';
+@import 'elements/_webforms';
+@import 'elements/_alerts';
 
 // ------------------------------------ region elements ------------------------------------ 
 @import 'regions/_section-header';
 @import 'regions/_header';
 @import 'regions/_menu-etiquetas-home';
 @import 'regions/_menu-etiquetas';
-@import 'regions/_menu-top';
+@import 'regions/_menu-top'; 
 @import 'regions/_menu-agenda';
 @import 'regions/_footer';
 @import 'regions/_navigation';
@@ -20,8 +24,15 @@
 
 // ------------------------------------ pages elements ------------------------------------ 
 @import 'pages/_pages-content';
+@import 'pages/_pages-editorial';
 @import 'pages/_page-node-basic-single-column';
 @import 'pages/_more-interests';
 @import 'pages/_banner';
 @import 'pages/_gallery-top';
 @import 'pages/_repos';
+@import 'pages/_registro';
+@import 'pages/_views-pages';
+@import 'pages/_agenda';
+@import 'pages/_home';
+@import 'pages/_oferta-laboral';
+@import 'pages/_pages-programas-representante';

@@ -1,0 +1,62 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20170731 at Wed Jan 16 17:37:32 2019
+ By Aleksey,,,
+Copyright (c) 1989 Adobe Systems Incorporated.  All Rights Reserved.Avenir is a registered trademark of Linotype AG and/or its subsidiaries.
+</metadata>
+<defs>
+<font id="Avenir-LightOblique" horiz-adv-x="260" >
+  <font-face 
+    font-family="Avenir"
+    font-weight="300"
+    font-style="oblique"
+    font-stretch="normal"
+    units-per-em="1000"
+    panose-1="0 0 0 0 0 0 0 0 0 0"
+    ascent="800"
+    descent="-200"
+    bbox="-16 -144 885 896"
+    underline-thickness="50"
+    underline-position="-200"
+    slope="-8"
+    unicode-range="U+0020-0192"
+  />
+<missing-glyph 
+ />
+    <glyph glyph-name=".notdef" 
+ />
+    <glyph glyph-name=".null" horiz-adv-x="0" 
+ />
+    <glyph glyph-name="nonmarkingreturn" horiz-adv-x="333" 
+ />
+    <glyph glyph-name="space" unicode=" " 
+ />
+    <glyph glyph-name="dotlessi" unicode="&#x131;" horiz-adv-x="240" 
+d="M90 0v462h60v-462h-60z" />
+    <glyph glyph-name="Lslash" unicode="&#x141;" horiz-adv-x="500" 
+d="M97 0v231l-72 -64v65l72 63v413h66v-358l216 189v-62l-216 -189v-228h330v-60h-396z" />
+    <glyph glyph-name="lslash" unicode="&#x142;" horiz-adv-x="240" 
+d="M90 0v324l-84 -85v67l84 85v365h60v-305l84 86v-67l-84 -85v-385h-60z" />
+    <glyph glyph-name="OE" unicode="&#x152;" horiz-adv-x="944" 
+d="M581 336v-276h304v-60h-472q-147 0 -250.5 99t-103.5 255q0 112 56 194.5t142 121t188 38.5h432v-60h-296v-252h279v-60h-279zM515 60v588h-78q-43 0 -86 -10.5t-84 -34t-72.5 -57t-50.5 -83t-19 -109.5q0 -63 21 -114.5t53.5 -84t74 -55t81 -31.5t76.5 -9h84z" />
+    <glyph glyph-name="oe" unicode="&#x153;" horiz-adv-x="907" 
+d="M507 270h296q-1 67 -37.5 108.5t-109.5 41.5q-67 0 -108 -43.5t-41 -106.5zM863 216h-356q-3 -74 39.5 -124t120.5 -50q86 0 133 74l47 -34q-39 -51 -82.5 -72.5t-107.5 -21.5q-135 0 -182 114h-2q-28 -55 -80 -84.5t-119 -29.5q-99 0 -164.5 69t-65.5 174t65.5 174
+t164.5 69q138 0 199 -115q20 48 65.5 81.5t115.5 33.5q91 0 150 -55.5t59 -167.5v-35zM104 231q0 -77 47.5 -133t124.5 -56t124 54.5t47 134.5t-47 134.5t-124 54.5t-124.5 -56t-47.5 -133z" />
+    <glyph glyph-name="Scaron" unicode="&#x160;" horiz-adv-x="556" 
+d="M53 89l63 42q53 -89 162 -89q68 0 113.5 38t45.5 101q0 46 -27 76t-67.5 43t-88 30t-88 35.5t-67.5 61t-27 105.5q0 90 66 142t161 52q125 0 193 -89l-57 -41q-50 70 -138 70q-68 0 -113.5 -35t-45.5 -99q0 -43 20 -72t52.5 -44.5t71 -27t77.5 -25t71.5 -33.5t52.5 -57.5
+t20 -91.5q0 -92 -64.5 -145.5t-155.5 -53.5q-154 0 -230 107zM417 896l-106 -144h-70l-109 144h62l83 -114l86 114h54z" />
+    <glyph glyph-name="scaron" unicode="&#x161;" horiz-adv-x="426" 
+d="M28 82l53 36q18 -36 55 -56t79 -20t74 23.5t32 61.5q0 35 -28 53.5t-68.5 26.5t-81 18.5t-68.5 38.5t-28 77q0 63 47.5 98t110.5 35q119 0 163 -87l-54 -32q-36 65 -109 65q-36 0 -67 -20t-31 -54t28 -51.5t68.5 -25t81 -17.5t68.5 -39.5t28 -81.5q0 -68 -48.5 -105.5
+t-118.5 -37.5q-133 0 -186 94zM352 708l-106 -144h-70l-109 144h62l83 -114l86 114h54z" />
+    <glyph glyph-name="Ydieresis" unicode="&#x178;" horiz-adv-x="574" 
+d="M254 0v305l-260 403h79l214 -336l219 336h74l-260 -403v-305h-66zM144 840q0 20 14 34t34 14t34 -14t14 -34t-14 -34t-34 -14t-34 14t-14 34zM334 840q0 20 14 34t34 14t34 -14t14 -34t-14 -34t-34 -14t-34 14t-14 34z" />
+    <glyph glyph-name="Zcaron" unicode="&#x17d;" horiz-adv-x="556" 
+d="M23 0v52l414 596h-408v60h493v-54l-417 -594h428v-60h-510zM417 896l-106 -144h-70l-109 144h62l83 -114l86 114h54z" />
+    <glyph glyph-name="zcaron" unicode="&#x17e;" horiz-adv-x="426" 
+d="M27 0v36l277 372h-263v54h346v-36l-276 -372h288v-54h-372zM352 708l-106 -144h-70l-109 144h62l83 -114l86 114h54z" />
+    <glyph glyph-name="florin" unicode="&#x192;" horiz-adv-x="520" 
+d="M395 419v-48h-117l-72 -391q-24 -124 -143 -124q-50 0 -79 24l30 47q21 -17 53 -17q38 0 57.5 27t29.5 84l64 350h-108v48h117l29 154q27 147 143 147q49 0 90 -30l-32 -45q-30 21 -58 21q-66 0 -83 -90l-29 -157h108z" />
+  </font>
+</defs></svg>

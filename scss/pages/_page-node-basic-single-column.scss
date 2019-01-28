@@ -5,14 +5,19 @@
 	
 	.row{
 		
-		display: block;
+		//display: block;
 		background: $color-blanco-rad;
 		padding: 0 3.7rem 3rem;
 		position: relative;
-		//display: inline-block;
+		//@include display-grid;
+		@include display-flex;
 		margin: 0;
-	    //grid-template-columns: 1fr 1fr 1fr 1fr;
-	    //grid-gap: 1rem;
+		//display: flex;
+	    
+	    @media (max-width: $breakpoint_3){
+			padding: 0 0 1rem;
+			//display: block;
+		}
 	
 		.col-sm-12{
 			max-width: 800px;
@@ -34,9 +39,28 @@
 	
 }
 
+//
+// Remove basic page style and background
 .node-168,
 .node-216,
-.node-158 {
+.node-158,
+.node-148,
+.node-157,
+.node-150,
+.node-149,
+.node-152,
+.node-156,
+.node-121,
+.node-153,
+.node-159,
+.node-160,
+.node-161,
+.node-162,
+.node-163,
+.node-164,
+.node-165,
+.node-166,
+.node-167 {
 	
 	.row{
 		
@@ -49,6 +73,45 @@
 	
 		.col-sm-12{
     
+		}
+		
+	}
+	
+}
+
+.node-215 {
+	
+	.row{
+		
+		@include display-grid;
+		@include grid-parent-2-columns (55%, 1fr);
+	    grid-gap: 3rem;
+		
+		@media (max-width: $breakpoint_3){
+			@include grid-parent-1-columns (1fr);
+		}
+		
+		&:before,
+		&:after{
+			display: none;
+		}
+	
+		section{
+			width: 100%;
+			@include grid-child-column(1, 2);
+			@include grid-child-row (1, 1);
+		}
+		
+		aside{
+			width: 100%;
+			@include grid-child-column(2, 3);
+			@include grid-child-row (1, 1);
+			
+			@media (max-width: $breakpoint_3){
+				@include grid-child-column(1, 2);
+				@include grid-child-row (2, 2);
+			}
+			
 		}
 		
 	}
