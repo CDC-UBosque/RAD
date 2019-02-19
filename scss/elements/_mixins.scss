@@ -62,7 +62,7 @@
 // --------------------------------------------------- //
 @mixin cards{
 	
-	&:nth-child(n+2):nth-child(odd):nth-child(-n+8){
+	/*&:nth-child(n+2):nth-child(odd):nth-child(-n+8){
 		
 		.views-field-field-imagen-principal-del-event,
 		.views-field-field-imagenes-de-asi-lo-vivimos{
@@ -108,7 +108,7 @@
 			
 		}
 		
-	}
+	}*/
 	
 	.views-field-field-imagen-principal-del-event,
 	.views-field-field-imagenes-de-asi-lo-vivimos{
