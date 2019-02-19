@@ -15,7 +15,6 @@ global-styling:
 global-scripts:
   version: 1.x
   js: 
-    js/masonry/macy.js: {}
-    js/masonry/repos.js: {}
-    js/masonry/interest.js: {}
-    js/menu/menu-slide.js: {}
+    js/masonry/masonry.pkgd.min.js: {}
+    js/masonry/imagesloaded.pkgd.min.js: {}
+    js/masonry/repos.js: {}    

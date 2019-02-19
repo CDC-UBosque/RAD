@@ -6,3 +6,12 @@
  *
  * Place your custom PHP code in this file.
  */
+
+
+
+function tema_rad_preprocess_html(&$variables) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+      if($node) {
+        $variables['attributes']['class'][] = 'node-' . $node->id();
+      }
+}
