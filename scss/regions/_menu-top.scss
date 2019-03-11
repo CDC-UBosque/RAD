@@ -189,18 +189,18 @@
 			
 		}
 		
-		/*li.active{
+		li.expanded{
 			
 			.dropdown-menu{
 				@include display-flex;
 				
-				a{
-					padding: 1rem;
+				.is-active{
+					color: $color-rojo-rad;
 				}
 				
 			}
 			
-		}*/
+		}
 		
 		//.dropdown{
 			//position: relative;
