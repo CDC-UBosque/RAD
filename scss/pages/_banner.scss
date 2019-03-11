@@ -30,6 +30,15 @@
 			top: 0;
 		}
 		
+		a{
+			text-decoration: none;
+			
+			&:after{
+				opacity: 1;
+			}
+			
+		}
+		
 	}
 	
 }

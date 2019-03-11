@@ -73,6 +73,14 @@
 							
 						}
 						
+						a{
+							text-decoration: none;
+							
+							&:after{
+								opacity: 1;
+							}
+						}
+						
 					}
 					
 					//

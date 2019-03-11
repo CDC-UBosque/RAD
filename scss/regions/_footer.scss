@@ -149,39 +149,39 @@ footer.footer{
 					    
 					    &:nth-child(1){
 						    @include grid-child-column(1, 2);
-							@include grid-child-row (1, 1);
+							@include grid-child-row (auto, auto);
 							
 					    }
 					    
 					    &:nth-child(2){
 						    @include grid-child-column(2, 3);
-							@include grid-child-row (1, 1);
+							@include grid-child-row (auto, auto);
 							
-							@media (max-width: $breakpoint_3){
-								@include grid-child-column(1, 2);
-								@include grid-child-row (2, 2);
-							}
+							//@media (max-width: $breakpoint_3){
+							//	@include grid-child-column(1, 2);
+							//	@include grid-child-row (2, 2);
+							//}
 							
 					    }
 					    
 					    &:nth-child(3){
 						    @include grid-child-column(3, 4);
-							@include grid-child-row (1, 1);
+							@include grid-child-row (auto, auto);
 							
 							@media (max-width: $breakpoint_3){
-								@include grid-child-column(1, 2);
-								@include grid-child-row (3, 3);
+							  @include grid-child-column(1, 2);
+							  @include grid-child-row (auto, auto);
 							}
 							
 					    }
 					    
 					    &:nth-child(4){
 						    @include grid-child-column(4, 5);
-							@include grid-child-row (1, 1);
+							@include grid-child-row (auto, auto);
 							
 							@media (max-width: $breakpoint_3){
-								@include grid-child-column(1, 2);
-								@include grid-child-row (4, 4);
+							  @include grid-child-column(2, 3);
+							  @include grid-child-row (auto, auto);
 							}
 							
 					    }
@@ -226,6 +226,11 @@ footer.footer{
 		p{
 			text-align: center;
 			font-size: 13px;
+			
+			a{
+				text-decoration: none;
+			}
+			
 		}
 		
 	}

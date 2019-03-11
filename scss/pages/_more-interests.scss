@@ -50,6 +50,7 @@
 			float: right;
 			position: relative;
 			overflow: visible;
+			text-decoration: none;
 			
 			&:before{
 				@include right-arrow;
