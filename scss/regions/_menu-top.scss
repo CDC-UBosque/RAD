@@ -82,6 +82,7 @@
 					opacity: 1;
 					bottom: -7%;
 				}
+				
 			}
 			
 			//
@@ -187,6 +188,19 @@
 			}
 			
 		}
+		
+		/*li.active{
+			
+			.dropdown-menu{
+				@include display-flex;
+				
+				a{
+					padding: 1rem;
+				}
+				
+			}
+			
+		}*/
 		
 		//.dropdown{
 			//position: relative;

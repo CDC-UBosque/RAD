@@ -112,4 +112,11 @@ $('.page-node-type-proyecto .row .region-content .content>div .galeria-en-nodo .
 		//$("nav.navbar").toggleClass("open");
 		$("#navbar-collapse").toggleClass("open");
 	});
+	
+	// add class open when asociacion tab is selected
+	$("li.dropdown.active-trail").ready(function() {
+		$("li.expanded").toggleClass("open");
+		$("#navbar-collapse").toggleClass("open");
+	});
+	
 })(jQuery);
