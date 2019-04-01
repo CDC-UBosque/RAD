@@ -35,7 +35,7 @@
 				@include cards;
 				
 				.views-field-field-catego{
-					margin-top: 1rem;
+					//margin-top: 1rem;
 				}
 				
 			}
@@ -44,9 +44,11 @@
 		
 	}
 	
+	// fix margin respositories concursos
+	
 	//
 	// fix margin image
-	section[ class*="block-views-blockrepositorios-por-etiqueta-block-"]{
+	/*section[ class*="block-views-blockrepositorios-por-etiqueta-block-"]{
 		.view-content{
 			
 			.views-row{
@@ -63,7 +65,7 @@
 			
 		}
 		
-	}
+	}*/
 	
 	section.bloque-agenda-principal{
 		margin-bottom: 1rem;
@@ -252,7 +254,7 @@
 		
 	}
 	
-	section.bloque-agenda-varios{
+	/*section.bloque-agenda-varios{
 		
 		.view-content{
 			
@@ -266,6 +268,6 @@
 			
 		}
 		
-	}
+	}*/
 	
 }

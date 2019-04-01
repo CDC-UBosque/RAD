@@ -1,0 +1,36 @@
+// ------------------------ pages gracias --------------------------- //
+// --------------------------------------------------- //
+
+article[about="/gracias"],
+article[about="/ya-eres-parte"]{
+	position: relative;
+	
+	@media (min-width: $breakpoint_1){
+		left: calc(0% + 8rem);
+	}
+	
+	.content{
+		padding: 3rem 0;
+			
+		h3{
+			@include font-block-title-m ();
+			font-size: 4rem;
+			line-height: 4rem;
+			color: #222222;
+			text-align: center;
+		}
+		
+		p{
+			
+			text-align: center;
+			
+			&:nth-child(2){
+				border-bottom: 1px solid $color-grey-borders;
+				padding-bottom: 1rem;
+			}
+			
+		}
+		
+	}
+	
+}

@@ -1,0 +1,58 @@
+// ------------------------ pages taxonomy --------------------------- //
+// --------------------------------------------------- //
+
+.path-taxonomy{
+	
+	.view-content{
+			
+		.views-row{
+			background-color: $color-blanco-rad;
+			display: inline-block;
+			width: calc(33% - 15px);
+			border: 1px solid $color-grey-borders;
+			position: relative;
+			padding: 1.5rem;
+			margin-bottom: 1rem;
+			
+			@media (max-width: $breakpoint_3){
+				width: calc(50% - 15px);
+			}
+			
+			@media (max-width: $breakpoint_4){
+				width: 100%;
+			}
+			
+			article{
+				@include display-grid;
+				@include grid-parent-2-rows (auto, auto);
+				
+				
+				h2{
+					@include grid-child-row (2, 2);
+					margin-bottom: 0;
+					
+					a{
+						@include font-name-card ();
+						color: $color-100;
+					}
+					
+				}
+				
+				.content{
+					@include grid-child-row (1, 1);
+					
+					@include cards;
+					
+					.views-field-field-catego{
+						margin-top: 1rem;
+					}
+					
+				}
+				
+			}
+			
+		}
+	
+	}
+		
+}

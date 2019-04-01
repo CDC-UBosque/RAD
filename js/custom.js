@@ -18,3 +18,11 @@ var masonry = new Macy({
         500: 1
     }
 });
+
+(function($, Drupal, window, document) {
+    $('form').submit(function () {
+       if (!grecaptcha.getResponse()) {
+         event.preventDefault();
+         $('<span class="red recaptcha">reCAPTCHA is invalid</span>').insertAfter('.g-recaptcha');}
+      });
+})(jQuery, Drupal, this, this.document);

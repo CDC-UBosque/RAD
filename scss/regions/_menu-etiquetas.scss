@@ -6,6 +6,23 @@
 	
 	margin-top: 1rem;
 	
+	@media (max-width: $breakpoint_3){
+		position: relative;
+		&:after{
+				@include right-arrow;
+			    right: -14px;
+			    top: 0.9rem;
+			}
+			
+			&:before{
+				@include left-arrow;
+				left: -14px;
+				top: 0.9rem;
+			}
+		
+	}
+	
+	
 	ul{
 		
 		@media (max-width: $breakpoint_3){
@@ -13,19 +30,19 @@
 			overflow-x: auto; 
 			-webkit-overflow-scrolling: touch;
 			-ms-overflow-style: -ms-autohiding-scrollbar; 
-			//position: relative;
+			position: relative;
 			
-			&:after{
+			/*&:after{
 				@include right-arrow;
-			    right: -0.5rem;
+			    right: 4px;
 			    top: 0.9rem;
 			}
 			
 			&:before{
 				@include left-arrow;
-				left: -0.5rem;
+				left: 4px;
 				top: 0.9rem;
-			}
+			}*/
 			
 			&::-webkit-scrollbar{
 				display: none;

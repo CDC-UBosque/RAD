@@ -52,7 +52,7 @@
 	}
 	
 	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
-		display: -ms-grid;	
+		display: inline-block;	
 		width: 100%;	
 	}
 	
@@ -110,9 +110,22 @@
 		
 	}*/
 	
+	// taxonomy views
+	.field--name-field-imagen-principal-del-event{
+		margin: -1.5rem -1.5rem 1rem;
+	}
+	
 	.views-field-field-imagen-principal-del-event,
 	.views-field-field-imagenes-de-asi-lo-vivimos{
+		display: inline-block;
 		
+		@supports (-webkit-overflow-scrolling: touch) {
+		  margin-bottom: 2rem;
+		}
+		
+		@supports not (-webkit-overflow-scrolling: touch) {
+		  /* CSS for other than iOS devices */ 
+		}
 		
 		.field-content{
 			margin: -1.5rem;
@@ -143,6 +156,24 @@
 			//border: 1px solid red;
 			height: inherit;
 			width: 100%;
+		}
+		
+	}
+	
+	// field category taxonomy
+	.field--name-field-catego{
+		
+		// punto
+		.field--name-field-punto-imagen{
+			position: absolute;
+			top: 1rem;
+			left: 1rem;
+			pointer-events: none;
+		}
+		
+		.field--name-name-text{
+			@include font-block-complementario-s ();
+			box-shadow: none;
 		}
 		
 	}
@@ -227,19 +258,23 @@
 @mixin right-arrow{
 	position: absolute;
 	content: "";
-	width: 4px;
-	height: 7px;
+	width: 7px;
+	height: 10px;
 	background: url(../images/svg/right.svg);
 	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: 1000;
 }
 
 @mixin left-arrow{
 	position: absolute;
 	content: "";
-	width: 4px;
-	height: 7px;
+	width: 7px;
+	height: 10px;
 	background: url(../images/svg/left.svg);
 	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: 1000;
 }
 
 @mixin btn-primary{

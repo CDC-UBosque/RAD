@@ -102,6 +102,22 @@
 			    text-align: center;
 			}
 			
+			// banner link
+			.field--name-field-enlace{
+				//position: absolute;
+				//top: 0;
+				
+				a{
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					opacity: 0;
+				}
+				
+			}
+			
 		}
 		
 		//
@@ -435,7 +451,7 @@
 			>div{
 				max-width: 1625px;
 				margin: auto;
-				padding: 0 2rem 3rem;
+				padding: 0 1rem 3rem;
 				
 				.view-calendario{
 					position: relative;
@@ -450,7 +466,11 @@
 							position: absolute;
 							top: 0;
 							right: 0;
-							@include width-max-content;
+							
+							@media (max-width: $breakpoint_4){
+								display: none;
+							}
+							
 						}
 						
 					}

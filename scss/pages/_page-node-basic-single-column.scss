@@ -16,7 +16,7 @@
 	    
 	    @media (max-width: $breakpoint_3){
 			padding: 0 0 1rem;
-			//display: block;
+			display: block;
 		}
 	
 		.col-sm-12{
@@ -89,6 +89,7 @@
 		
 		@media (max-width: $breakpoint_3){
 			@include grid-parent-1-columns (1fr);
+			display: block;
 		}
 		
 		&:before,

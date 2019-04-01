@@ -6,6 +6,18 @@ aside{
 	.bloque-agenda-pagina,
 	.bloque-asi-lo-vivimos-agenda{
 		
+		.view-header{
+			
+			a{
+				@include btn-primary-yellow;
+				width: 100%;
+				text-align: left;
+				padding: 1rem;
+				margin-top: 1rem;
+			}
+			
+		}
+		
 		.view-calendario{
 			
 			.view-header{

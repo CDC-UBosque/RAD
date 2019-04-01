@@ -42,7 +42,7 @@ section{
 				
 				&:first-child{
 					
-					@media (max-width: 570px){
+					@media (max-width: $breakpoint_3){
 						display: none;
 					}
 					
@@ -67,7 +67,7 @@ section{
 				
 				&:nth-child(2){
 					
-					@media (max-width: 570px){
+					@media (max-width: $breakpoint_3){
 						display: none;
 					}
 					
@@ -92,6 +92,20 @@ section{
 						color: $color-blanco-rad;
 						background: $color-rojo-rad;
 						padding-left: 1rem;
+						
+						//@media (min-width: $breakpoint_3){
+						//	text-decoration: n;
+						//}
+						
+						@media (max-width: $breakpoint_3){
+							text-decoration: underline;
+							
+							&:hover{
+								text-decoration: none;
+							}
+							
+						}
+						
 					}
 					
 				}

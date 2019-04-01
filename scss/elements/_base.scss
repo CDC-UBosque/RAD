@@ -47,6 +47,12 @@ $font-title-color: #222222;
 //  font-weight: $font-title-font-weight;
   font-family: $font-title-font-family;
   color: $font-title-color;
+  
+  @media (max-width: $breakpoint_4){
+		font-size: 30px;
+		line-height: 30px;
+	}
+  
 }
 
 /* quotes font style */

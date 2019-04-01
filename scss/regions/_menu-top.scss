@@ -3,6 +3,7 @@
 
 #navbar-collapse.open{
     margin-bottom: 4rem;
+        transition: all .4s  ease-in-out;
     
     @media (max-width: $breakpoint_3){
 	    margin-bottom: 23rem;
@@ -17,6 +18,10 @@
 	@media (max-width: $breakpoint_3){
 		margin: 0;
 		border-bottom: 1px solid $color-grey-borders;
+	}
+	
+	.menu-principal.contextual-region{
+		position: initial;
 	}
 	
 	ul{
@@ -136,17 +141,17 @@
 				
 			}
 			
-			&:nth-child(n+7){
+			&:nth-child(n+6){
 				display: none;
 				position: relative;
 				
-				@media (max-width: 570px){
+				@media (max-width: $breakpoint_3){
 					display: inline-block;
 				}
 				
 			}
 			
-			&:nth-child(7){
+			&:nth-child(6){
 				padding-left: 1rem;
 				
 				&:before{
@@ -167,7 +172,7 @@
 				
 			}
 			
-			&:nth-child(8){
+			&:nth-child(7){
 				padding-left: 1rem;
 				
 				&:before{
@@ -192,7 +197,7 @@
 		li.expanded{
 			
 			.dropdown-menu{
-				@include display-flex;
+				//@include display-flex;
 				
 				.is-active{
 					color: $color-rojo-rad;
@@ -220,6 +225,7 @@
 					position: absolute;
 					//@include width-max-content;
 					display: inline-block;
+					margin: 0;
 					
 					&::before,
 					&::after{
@@ -255,10 +261,37 @@
 					padding: 1rem;
 				}
 				
+				li{
+					&:nth-child(n+1){
+						display: block;
+						a{
+							color: $color-30;
+							position: relative;
+							@include font-link-text;
+							
+							&:hover{
+								color: $color-rojo-rad;
+							}
+							
+						}
+					}
+					&:nth-child(n+6){
+						padding-left: 0;
+						position: initial;
+						&:before{
+							display: none;
+						}
+					}
+				}
+				
 			}
 			
 		}
 		
 	}
 	
+}
+
+.navbar-collapse.in{
+	overflow-y: initial;
 }

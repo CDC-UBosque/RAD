@@ -18,6 +18,20 @@
 		top: initial;
 		width: 95%;
 		margin: auto;
+		padding: 0 1rem;
+		
+		&:after{
+			@include right-arrow;
+		    right: 4px;
+		    top: 0.9rem;
+		}
+		
+		&:before{
+			@include left-arrow;
+			left: 4px;
+			top: 0.9rem;
+		}
+		
 	}
 	
 	
@@ -28,19 +42,10 @@
 			overflow-x: auto; 
 			-webkit-overflow-scrolling: touch;
 			-ms-overflow-style: -ms-autohiding-scrollbar; 
-			//position: relative;
-			
-			&:after{
-				@include right-arrow;
-			    right: -0.5rem;
-			    top: 0.9rem;
-			}
-			
-			&:before{
-				@include left-arrow;
-				left: -0.5rem;
-				top: 0.9rem;
-			}
+			position: relative;
+			z-index: 1;
+			width: 90%;
+			margin: auto;
 			
 			&::-webkit-scrollbar{
 				display: none;
